@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var isActiveDescriptionView = false
+    
     var body: some View {
-        GeometryReader { proxy in
+        NavigationStack {
             VStack(spacing: 0) {
-                
+                Image(systemName: "questionmark.circle")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 80)
+                    .padding(.bottom)
             } // VStack
-        } // GeometryReader
+        } // NavigationStack
     } // body
 }
