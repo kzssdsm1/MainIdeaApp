@@ -14,6 +14,8 @@
 		5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472C16E291E04E600E22D80 /* DescriptionView.swift */; };
 		5472C172291E0E4700E22D80 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472C171291E0E4700E22D80 /* NavigationDestination.swift */; };
 		5498C0FD292F4E4400B11C9B /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498C0FC292F4E4400B11C9B /* QuestionsView.swift */; };
+		5498C101292F513D00B11C9B /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C0FF292F513D00B11C9B /* KodomoRounded.otf */; };
+		5498C102292F513D00B11C9B /* KodomoRounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,9 @@
 		5472C16E291E04E600E22D80 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		5472C171291E0E4700E22D80 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
 		5498C0FC292F4E4400B11C9B /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
+		5498C0FF292F513D00B11C9B /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
+		5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KodomoRounded-Light.otf"; sourceTree = "<group>"; };
+		5498C103292F51DC00B11C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +62,8 @@
 		545B41FC291CD02400D6C773 /* MainIdeaApp */ = {
 			isa = PBXGroup;
 			children = (
+				5498C103292F51DC00B11C9B /* Info.plist */,
+				5498C0FE292F511D00B11C9B /* Font */,
 				5472C170291E0CA300E22D80 /* Model */,
 				545B420B291CD2DB00D6C773 /* View */,
 				545B41FD291CD02400D6C773 /* MainIdeaAppApp.swift */,
@@ -90,6 +97,15 @@
 				5472C171291E0E4700E22D80 /* NavigationDestination.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5498C0FE292F511D00B11C9B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */,
+				5498C0FF292F513D00B11C9B /* KodomoRounded.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +166,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5498C101292F513D00B11C9B /* KodomoRounded.otf in Resources */,
+				5498C102292F513D00B11C9B /* KodomoRounded-Light.otf in Resources */,
 				545B4205291CD02600D6C773 /* Preview Assets.xcassets in Resources */,
 				545B4202291CD02600D6C773 /* Assets.xcassets in Resources */,
 			);
@@ -298,6 +316,7 @@
 				DEVELOPMENT_TEAM = PNHDUJ8FZK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MainIdeaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -327,6 +346,7 @@
 				DEVELOPMENT_TEAM = PNHDUJ8FZK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MainIdeaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
