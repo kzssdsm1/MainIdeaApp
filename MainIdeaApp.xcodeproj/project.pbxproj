@@ -13,6 +13,7 @@
 		545B420D291CD2E700D6C773 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545B420C291CD2E700D6C773 /* HomeView.swift */; };
 		5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472C16E291E04E600E22D80 /* DescriptionView.swift */; };
 		5472C172291E0E4700E22D80 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472C171291E0E4700E22D80 /* NavigationDestination.swift */; };
+		5498C0FD292F4E4400B11C9B /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498C0FC292F4E4400B11C9B /* QuestionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		545B420C291CD2E700D6C773 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5472C16E291E04E600E22D80 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		5472C171291E0E4700E22D80 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
+		5498C0FC292F4E4400B11C9B /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				545B420C291CD2E700D6C773 /* HomeView.swift */,
 				5472C16E291E04E600E22D80 /* DescriptionView.swift */,
+				5498C0FC292F4E4400B11C9B /* QuestionsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				5472C172291E0E4700E22D80 /* NavigationDestination.swift in Sources */,
 				5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */,
 				545B420D291CD2E700D6C773 /* HomeView.swift in Sources */,
+				5498C0FD292F4E4400B11C9B /* QuestionsView.swift in Sources */,
 				545B41FE291CD02400D6C773 /* MainIdeaAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

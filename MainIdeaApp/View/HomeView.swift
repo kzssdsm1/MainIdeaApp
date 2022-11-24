@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var isActiveDescriptionView = false
-    @State private var path: [NavigationDestination] = []
+    @State private var isPresentedDescriptionView = false
+    @State private var isPresentedQuestionsView = false
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack {
             VStack(spacing: 0) {
-                Image(systemName: "questionmark.circle")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 80)
-                    .padding(.bottom)
+                Button("もんだいへ") {
+                    isPresentedQuestionsView = true
+                }
+                .navigationDestination(isPresented: $isPresentedQuestionsView) {
+                    QuestionsView()
+                }
+                
+                Button("アプリのつかいかた") {
+                    isPresentedDescriptionView = true
+                }
+                .navigationDestination(isPresented: $isPresentedDescriptionView) {
+                    DescriptionView()
+                }
             } // VStack
         } // NavigationStack
     } // body
