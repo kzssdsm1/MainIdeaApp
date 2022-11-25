@@ -14,16 +14,21 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                Button("もんだいへ") {
+                
+                Button(action: {
                     isPresentedQuestionsView = true
-                }
+                }, label: {
+                    Text("もんだいをとく")
+                })
                 .navigationDestination(isPresented: $isPresentedQuestionsView) {
                     QuestionsView()
                 }
                 
-                Button("アプリのつかいかた") {
+                Button(action: {
                     isPresentedDescriptionView = true
-                }
+                }, label: {
+                    Text("アプリのつかいかた")
+                })
                 .navigationDestination(isPresented: $isPresentedDescriptionView) {
                     DescriptionView()
                 }
