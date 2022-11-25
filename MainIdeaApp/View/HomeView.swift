@@ -17,6 +17,15 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                Spacer(minLength: 0)
+                
+                Image(systemName: "questionmark.circle.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: screenWidth * 0.4, height: screenWidth * 0.4)
+                    .foregroundColor(.lightGray)
+                
+                Spacer(minLength: 0)
                 
                 Button(action: {
                     isPresentedQuestionsView = true
@@ -40,6 +49,12 @@ struct HomeView: View {
                 .navigationDestination(isPresented: $isPresentedDescriptionView) {
                     DescriptionView()
                 }
+                
+                Spacer(minLength: 0)
+                
+                Spacer(minLength: 0)
+                
+                Spacer(minLength: 0)
             } // VStack
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -47,4 +62,3 @@ struct HomeView: View {
         } // NavigationStack
     } // body
 }
-//KodomoRounded-Light
