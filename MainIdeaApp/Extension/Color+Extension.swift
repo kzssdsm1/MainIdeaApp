@@ -32,4 +32,13 @@ extension Color {
             opacity: Double(a) / 255
         )
     }
+    
+    // 暗めの灰色
+    static let darkGray = Color(hex: "5c5c5c")
+    
+    // 明るめの灰色
+    static let lightGray = Color(hex: "d1d1d1")
+    
+    // 黒板の色
+    static let kokubanColor = Color(hex: "00552e")
 }
