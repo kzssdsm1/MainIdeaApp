@@ -45,6 +45,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		542610C62939C14F0090DBAB /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		545B41F1291CD02400D6C773 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +71,7 @@
 		545B41FC291CD02400D6C773 /* MainIdeaApp */ = {
 			isa = PBXGroup;
 			children = (
+				542610C62939C14F0090DBAB /* Image */,
 				54619F4D2930889900CAC961 /* Extension */,
 				5498C103292F51DC00B11C9B /* Info.plist */,
 				5498C0FE292F511D00B11C9B /* Font */,
