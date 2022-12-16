@@ -11,4 +11,5 @@ struct QuestionChoice: Identifiable {
     let id = UUID()
     let answer: String
     let choices: [String]
+    var isCorrect = false
 }
