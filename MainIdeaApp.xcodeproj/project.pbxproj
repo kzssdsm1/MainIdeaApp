@@ -15,6 +15,7 @@
 		5463EF072942FD34008CDF00 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EF062942FD34008CDF00 /* Question.swift */; };
 		5463EF092943025C008CDF00 /* QuestionChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EF082943025C008CDF00 /* QuestionChoice.swift */; };
 		5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472C16E291E04E600E22D80 /* DescriptionView.swift */; };
+		5486C59F294C30DA00AE7F52 /* QuestionChoiceConext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486C59E294C30DA00AE7F52 /* QuestionChoiceConext.swift */; };
 		5498C0FD292F4E4400B11C9B /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498C0FC292F4E4400B11C9B /* QuestionsView.swift */; };
 		5498C101292F513D00B11C9B /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C0FF292F513D00B11C9B /* KodomoRounded.otf */; };
 		5498C102292F513D00B11C9B /* KodomoRounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */; };
@@ -30,6 +31,7 @@
 		5463EF062942FD34008CDF00 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		5463EF082943025C008CDF00 /* QuestionChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionChoice.swift; sourceTree = "<group>"; };
 		5472C16E291E04E600E22D80 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		5486C59E294C30DA00AE7F52 /* QuestionChoiceConext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionChoiceConext.swift; sourceTree = "<group>"; };
 		5498C0FC292F4E4400B11C9B /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		5498C0FF292F513D00B11C9B /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
 		5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KodomoRounded-Light.otf"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				5463EF062942FD34008CDF00 /* Question.swift */,
 				5463EF082943025C008CDF00 /* QuestionChoice.swift */,
+				5486C59E294C30DA00AE7F52 /* QuestionChoiceConext.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54619F4F293088BE00CAC961 /* Color+Extension.swift in Sources */,
+				5486C59F294C30DA00AE7F52 /* QuestionChoiceConext.swift in Sources */,
 				5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */,
 				5463EF092943025C008CDF00 /* QuestionChoice.swift in Sources */,
 				545B420D291CD2E700D6C773 /* HomeView.swift in Sources */,
