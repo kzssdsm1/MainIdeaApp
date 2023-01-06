@@ -15,6 +15,9 @@
 		5463EF072942FD34008CDF00 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EF062942FD34008CDF00 /* Question.swift */; };
 		5463EF092943025C008CDF00 /* QuestionChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EF082943025C008CDF00 /* QuestionChoice.swift */; };
 		5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472C16E291E04E600E22D80 /* DescriptionView.swift */; };
+		54817C3D2967D68B00C9EFBD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C3C2967D68B00C9EFBD /* String+Extension.swift */; };
+		54817C402967D6EE00C9EFBD /* RubyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */; };
+		54817C422967D7C200C9EFBD /* RubyLabelRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */; };
 		5486C59F294C30DA00AE7F52 /* QuestionChoiceConext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486C59E294C30DA00AE7F52 /* QuestionChoiceConext.swift */; };
 		5498C0FD292F4E4400B11C9B /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498C0FC292F4E4400B11C9B /* QuestionsView.swift */; };
 		5498C101292F513D00B11C9B /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C0FF292F513D00B11C9B /* KodomoRounded.otf */; };
@@ -31,6 +34,9 @@
 		5463EF062942FD34008CDF00 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		5463EF082943025C008CDF00 /* QuestionChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionChoice.swift; sourceTree = "<group>"; };
 		5472C16E291E04E600E22D80 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		54817C3C2967D68B00C9EFBD /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyLabel.swift; sourceTree = "<group>"; };
+		54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyLabelRepresentable.swift; sourceTree = "<group>"; };
 		5486C59E294C30DA00AE7F52 /* QuestionChoiceConext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionChoiceConext.swift; sourceTree = "<group>"; };
 		5498C0FC292F4E4400B11C9B /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		5498C0FF292F513D00B11C9B /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 		545B41FC291CD02400D6C773 /* MainIdeaApp */ = {
 			isa = PBXGroup;
 			children = (
+				54817C3E2967D6CF00C9EFBD /* Component */,
 				54619F4D2930889900CAC961 /* Extension */,
 				5498C103292F51DC00B11C9B /* Info.plist */,
 				5498C0FE292F511D00B11C9B /* Font */,
@@ -102,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				54619F4E293088BE00CAC961 /* Color+Extension.swift */,
+				54817C3C2967D68B00C9EFBD /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -114,6 +122,15 @@
 				5486C59E294C30DA00AE7F52 /* QuestionChoiceConext.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		54817C3E2967D6CF00C9EFBD /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */,
+				54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		5498C0FE292F511D00B11C9B /* Font */ = {
@@ -198,12 +215,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				54619F4F293088BE00CAC961 /* Color+Extension.swift in Sources */,
+				54817C422967D7C200C9EFBD /* RubyLabelRepresentable.swift in Sources */,
+				54817C3D2967D68B00C9EFBD /* String+Extension.swift in Sources */,
 				5486C59F294C30DA00AE7F52 /* QuestionChoiceConext.swift in Sources */,
 				5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */,
 				5463EF092943025C008CDF00 /* QuestionChoice.swift in Sources */,
 				545B420D291CD2E700D6C773 /* HomeView.swift in Sources */,
 				5463EF072942FD34008CDF00 /* Question.swift in Sources */,
 				5498C0FD292F4E4400B11C9B /* QuestionsView.swift in Sources */,
+				54817C402967D6EE00C9EFBD /* RubyLabel.swift in Sources */,
 				545B41FE291CD02400D6C773 /* MainIdeaAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
