@@ -12,7 +12,7 @@ struct RubyLabelRepresentable: UIViewRepresentable {
     let font: UIFont
     let textColor: UIColor
     let textAlignment: NSTextAlignment
-
+    
     private let rubyLabel = RubyLabel()
 
     func makeUIView(context: Context) -> UILabel {

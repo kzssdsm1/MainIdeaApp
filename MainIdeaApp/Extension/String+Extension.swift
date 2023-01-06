@@ -9,6 +9,10 @@ import UIKit
 
 extension String {
     func createRuby(color: UIColor = .black) -> NSAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        
+        paragraphStyle.lineBreakMode = .byCharWrapping
+        
         let textWithRuby = replacingOccurrences(of: "(｜.+?《.+?》)", with: ",$1,", options: .regularExpression)
             .components(separatedBy: ",")
             .map { component -> NSAttributedString in
@@ -29,7 +33,7 @@ extension String {
                 )
 
                 return NSAttributedString(string: baseText,
-                                          attributes: [kCTRubyAnnotationAttributeName as NSAttributedString.Key: rubyAnnotation])
+                                          attributes: [kCTRubyAnnotationAttributeName as NSAttributedString.Key: rubyAnnotation, NSAttributedString.Key.paragraphStyle: paragraphStyle])
             }
             .reduce(NSMutableAttributedString()) {
                 $0.append($1)
