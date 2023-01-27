@@ -37,6 +37,11 @@ extension String {
                 return $0
             }
         
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineBreakMode = .byCharWrapping
+        
+        textWithRuby.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, textWithRuby.length))
+        
         return textWithRuby
     }
 }
