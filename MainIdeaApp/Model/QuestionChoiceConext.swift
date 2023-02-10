@@ -180,4 +180,64 @@ struct QuestionChoiceContext {
         answer: "｜重《おも》い｜赤《あか》ちゃんを｜抱《だ》いているママ",
         choices: ["｜重《おも》い｜赤《あか》ちゃんを｜抱《だ》いているママ", "重い｜犬《いぬ》を抱いているママ", "重い赤ちゃんを抱いているお｜兄《にい》ちゃん"]
     )
+    
+    // 車椅子を押す女性
+    static let womanPushWheelchair = QuestionChoice(
+        answer: "｜車椅子《くるまいす》を｜押《お》す｜女性《じょせい》",
+        choices: ["｜車椅子《くるまいす》を｜押《お》す｜女性《じょせい》", "ソリを｜引《ひ》く女性", "車椅子を押すおじいちゃん"]
+    )
+    
+    // おばあちゃんがお出かけする
+    static let grandmotherIsGoingOut = QuestionChoice(
+        answer: "おばあちゃんがお出かけする",
+        choices: ["おじいちゃんがお｜出《で》かけする", "おばあちゃんがお出かけする", "おばあちゃんがトランプで｜遊《あそ》ぶ"]
+    )
+    
+    // おばあちゃんは車椅子で施設の人とお散歩
+    static let grandmotherWheelchairWalking = QuestionChoice(
+        answer: "おばあちゃんは車椅子で施設の人とお散歩",
+        choices: ["おじいちゃんは｜車椅子《くるまいす》で｜施設《しせつ》の人とお｜散歩《さんぽ》", "おばあちゃんが｜一人《ひとり》でお散歩", "おばあちゃんは車椅子で施設の人とお散歩"]
+    )
+    
+    // 坂道を自転車で登るのは辛い
+    static let uphillBicycleClimbHard = QuestionChoice(
+        answer: "｜坂道《さかみち》を｜自転車《じてんしゃ》で｜登《のぼ》るのは｜辛《つら》い",
+        choices: ["｜坂道《さかみち》を｜自転車《じてんしゃ》で｜登《のぼ》るのは｜辛《つら》い", "坂道を｜自動車《じどうしゃ》で登るのは辛い", "｜下《くだ》り｜坂《ざか》を自転車で｜走《はし》るのは｜楽《らく》"]
+    )
+    
+    // 三人乗り自転車
+    static let trioBicycle = QuestionChoice(
+        answer: "｜三人《さんにん》乗り自転車",
+        choices: ["｜一人《ひとり》｜乗《の》り｜自転車《じてんしゃ》", "｜二人《ふたり》乗り自転車", "｜三人《さんにん》乗り自転車"]
+    )
+    
+    // 坂道を三人乗りでも楽に登る
+    static let uphillTrioClimbEasy = QuestionChoice(
+        answer: "坂道を｜三人《さんにん》乗りでも楽に登る",
+        choices: ["｜坂道《さかみち》を｜二人《ふたり》｜乗《の》りでも｜楽《らく》に｜登《のぼ》る", "坂道を｜三人《さんにん》乗りでも楽に登る", "｜平《たい》らな道を｜楽《らく》に｜走《はし》る"]
+    )
+    
+    // 夏は帽子をかぶってお出かけ
+    static let summerCapGoingOut = QuestionChoice(
+        answer: "｜夏《なつ》は｜帽子《ぼうし》をかぶってお｜出《で》かけ",
+        choices: ["｜夏《なつ》は｜帽子《ぼうし》をかぶってお｜出《で》かけ", "夏は帽子をかぶらずにお出かけ", "夏はセーターを｜着《き》てお出かけ"]
+    )
+    
+    // パパはボクより背が高い
+    static let fatherIsTallerThanMe = QuestionChoice(
+        answer: "パパはボクより背が｜高《たか》い",
+        choices: ["パパはボクより｜背《せ》が｜低《ひく》い", "パパはボクより背が｜高《たか》い", "パパとボクは背が｜同《おな》じ"]
+    )
+    
+    // パパと虫取り楽しいな
+    static let insectCatchingWithFather = QuestionChoice(
+        answer: "パパと｜虫取《むしと》り｜楽《たの》しいな",
+        choices: ["パパと｜虫取《むしと》り｜楽《たの》しいな", "パパと｜魚釣《さかなつ》り楽しいな", "パパとかけっこ楽しいな"]
+    )
+    
+    // プリンがプルプル揺れている
+    static let shakingPudding = QuestionChoice(
+        answer: "プリンがプルプル揺れている",
+        choices: ["ソフトクリームがプルプル｜揺《ゆ》れている", "ケーキがプルプル揺ゆれている", "プリンがプルプル揺れている"]
+    )
 }

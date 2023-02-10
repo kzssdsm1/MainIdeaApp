@@ -10,7 +10,7 @@ import SwiftUI
 struct TestView: View {
     var body: some View {
         RubyLabelRepresentable(
-            attributedText: "｜男《おとこ》の｜子《こ》が｜悲《かな》しんでいる".createRuby(),
+            attributedText: "｜一人《ひとり》｜乗《の》り｜自転車《じてんしゃ》".createRuby(),
             font: .systemFont(ofSize: 22),
             textColor: .black,
             textAlignment: .left
