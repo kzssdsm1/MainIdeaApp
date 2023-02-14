@@ -10,6 +10,7 @@ import Foundation
 struct QuestionChoice: Identifiable {
     let id = UUID()
     let answer: String
+    let answerWithRuby: String
     let choices: [String]
     var isCorrect = false
 }
