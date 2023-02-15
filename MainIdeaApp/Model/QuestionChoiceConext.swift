@@ -7,46 +7,102 @@
 
 import Foundation
 
-struct QuestionChoiceContext {
+struct QuestionChoicesContext {
     // コウモリが逆さまにぶら下がっている
-    static let batsHangingUpsideDown = QuestionChoice(
+    static let questionChoice_1 = QuestionChoice(
         answer: "コウモリが｜逆《さか》さまにぶら｜下《さ》がっている",
         answerWithRuby: "コウモリが｜逆《さか》さまにぶら｜下《さ》がっている",
         choices: ["コウモリには｜羽《はね》がある", "コウモリが｜逆《さか》さまにぶら｜下《さ》がっている"]
     )
     
     // セミの幼虫は土の中
-    static let cicadaLarvaeAreInTheGround = QuestionChoice(
+    static let questionChoice_2 = QuestionChoice(
         answer: "セミの｜幼虫《ようちゅう》は土の中",
         answerWithRuby: "セミの｜幼虫《ようちゅう》は｜土《つち》の｜中《なか》",
         choices: ["｜土《つち》の｜中《なか》は｜暗《くら》い", "｜草《くさ》は｜緑色《みどりいろ》", "セミの｜幼虫《ようちゅう》は土の中"]
     )
     
     // おもちゃ箱からクマのぬいぐるみを取り出した
-    static let aBoyTookATeddyBearOutOfHisToyBox = QuestionChoice(
+    static let questionChoice_3 = QuestionChoice(
         answer: "おもちゃ｜箱《ばこ》からクマのぬいぐるみを｜取《と》り｜出《だ》した",
         answerWithRuby: "おもちゃ｜箱《ばこ》からクマのぬいぐるみを｜取《と》り｜出《だ》した",
         choices: ["おもちゃ｜箱《ばこ》からクマのぬいぐるみを｜取《と》り｜出《だ》した", "おもちゃが｜沢山《たくさん》", "｜緑色《みどりいろ》の｜服《ふく》を｜着《き》た｜男《おとこ》の｜子《こ》"]
     )
     
     // おばあちゃんは白いネコをひざに乗せて微笑んでいる
-    static let grandmaIsSmilingWithAWhiteCatOnHerLap = QuestionChoice(
+    static let questionChoice_4 = QuestionChoice(
         answer: "おばあちゃんは白いネコをひざに｜乗《の》せて｜微笑《ほほえ》んでいる",
         answerWithRuby: "おばあちゃんは｜白《しろ》いネコをひざに｜乗《の》せて｜微笑《ほほえ》んでいる",
         choices: ["｜白《しろ》いネコのしっぽは｜長《なが》い", "おばあちゃんの｜髪《かみ》の｜毛《け》は白い", "おばあちゃんは白いネコをひざに｜乗《の》せて｜微笑《ほほえ》んでいる"]
     )
     
     // 男の子がおいしそうにおにぎりを食べている
-    static let aBoyIsEatingARiceBallDeliciously = QuestionChoice(
+    static let questionChoice_5 = QuestionChoice(
         answer: "｜男《おとこ》の｜子《こ》がおいしそうにおにぎりを｜食《た》べている",
         answerWithRuby: "｜男《おとこ》の｜子《こ》がおいしそうにおにぎりを｜食《た》べている",
         choices: ["｜男《おとこ》の｜子《こ》がおいしそうにおにぎりを｜食《た》べている", "食べかけのおにぎりがある", "男の子の｜口《くち》にご｜飯《はん》つぶが｜付《つ》いている"]
     )
     
     // 馬に乗った男の子
-    static let aBoyIsRidingAHorse = QuestionChoice(
+    static let questionChoice_6 = QuestionChoice(
         answer: "馬に｜乗《の》った｜男《おとこ》の｜子《こ》",
         answerWithRuby: "｜馬《うま》に｜乗《の》った｜男《おとこ》の｜子《こ》",
         choices: ["｜馬《うま》が｜歩《ある》いている", "馬に｜乗《の》った｜男《おとこ》の｜子《こ》", "｜緑《みどり》の｜帽子《ぼうし》の男の子"]
+    )
+    
+    // お医者さんにのどを診て貰っている男の子
+    static let questionChoice_7 = QuestionChoice(
+        answer: "お｜医者《いしゃ》さんにのどを｜診《み》て｜貰《もら》っている｜男《おとこ》の｜子《こ》",
+        answerWithRuby: "お｜医者《いしゃ》さんにのどを｜診《み》て｜貰《もら》っている｜男《おとこ》の｜子《こ》",
+        choices: ["お｜医者《いしゃ》さんにのどを｜診《み》て｜貰《もら》っている｜男《おとこ》の｜子《こ》", "｜口《くち》を｜開《あ》けて｜足《あし》ぶらぶらしている子", "｜白衣《はくい》を｜着《き》ている、｜優《やさ》しいお医者さん"]
+    )
+    
+    // 粘土で楽しそうに恐竜を作る男の子
+    static let questionChoice_8 = QuestionChoice(
+        answer: "｜粘土《ねんど》で｜楽《たの》しそうに｜恐竜《きょうりゅう》を｜作《つく》る｜男《おとこ》の｜子《こ》",
+        answerWithRuby: "粘土で｜楽《たの》しそうに恐竜を｜作《つく》る｜男《おとこ》の｜子《こ》",
+        choices: ["｜机《つくえ》の｜上《うえ》に｜下敷《したじ》きを｜敷《し》いて｜粘土《ねんど》の｜恐竜《きょうりゅう》", "粘土で｜楽《たの》しそうに恐竜を｜作《つく》る｜男《おとこ》の｜子《こ》", "｜口《くち》を｜開《ひら》いた粘土の恐竜"]
+    )
+    
+    // お友達と二人で恐竜を見つけた
+    static let questionChoice_9 = QuestionChoice(
+        answer: "お｜友達《ともだち》と｜二人《ふたり》で恐竜を｜見《み》つけた",
+        answerWithRuby: "お｜友達《ともだち》と｜二人《ふたり》で｜恐竜《きょうりゅう》を｜見《み》つけた",
+        choices: ["｜帽子《ぼうし》が｜飛《と》んだ!", "｜湖《みずうみ》を｜泳《およ》ぐ｜恐竜《きょうりゅう》", "お｜友達《ともだち》と｜二人《ふたり》で恐竜を｜見《み》つけた"]
+    )
+    
+    // やっと弟が寝たのに、お兄ちゃんが泣き出して困っているママ
+    static let questionChoice_10 = QuestionChoice(
+        answer: "やっと｜弟《おとうと》が｜寝《ね》たのに、お｜兄《にい》ちゃんが｜泣《な》き｜出《だ》して｜困《こま》っているママ",
+        answerWithRuby: "やっと｜弟《おとうと》が｜寝《ね》たのに、お｜兄《にい》ちゃんが｜泣《な》き｜出《だ》して｜困《こま》っているママ",
+        choices: ["やっと｜弟《おとうと》が｜寝《ね》たのに、お｜兄《にい》ちゃんが｜泣《な》き｜出《だ》して｜困《こま》っているママ", "お兄ちゃんが泣いても、スヤスヤと｜眠《ねむ》る弟", "｜重《おも》い｜赤《あか》ちゃんを｜抱《だ》いているママ"]
+    )
+    
+    // おばあちゃんは車いすで施設の人とお散歩
+    static let questionChoice_11 = QuestionChoice(
+        answer: "おばあちゃんは車いすで｜施設《しせつ》の｜人《ひと》とお｜散歩《さんぽ》",
+        answerWithRuby: "おばあちゃんは｜車《くるま》いすで｜施設《しせつ》の｜人《ひと》とお｜散歩《さんぽ》",
+        choices: ["｜車《くるま》いすを｜押《お》す｜女性《じょせい》", "おばあちゃんはお｜出《で》かけする", "おばあちゃんは車いすで｜施設《しせつ》の｜人《ひと》とお｜散歩《さんぽ》"]
+    )
+    
+    // 坂道をお母さんが子ども二人と楽しそうに登る
+    static let questionChoice_12 = QuestionChoice(
+        answer: "｜坂道《さかみち》をお｜母《かあ》さんが子ども二人と楽しそうに｜登《のぼ》る",
+        answerWithRuby: "｜坂道《さかみち》をお｜母《かあ》さんが｜子《こ》ども｜二人《ふたり》と｜楽《たの》しそうに｜登《のぼ》る",
+        choices: ["｜子《こ》ども｜二人《ふたり》がヘルメットをかぶって｜楽《たの》しそうにしている", "｜三人《さんにん》｜乗《の》り｜自転車《じてんしゃ》", "｜坂道《さかみち》をお｜母《かあ》さんが子ども二人と楽しそうに｜登《のぼ》る"]
+    )
+    
+    // パパと虫とり楽しいな
+    static let questionChoice_13 = QuestionChoice(
+        answer: "パパと｜虫《むし》とり｜楽《たの》しいな",
+        answerWithRuby: "パパと｜虫《むし》とり｜楽《たの》しいな",
+        choices: ["｜夏《なつ》は｜帽子《ぼうし》をかぶってお｜出《で》かけ", "パパはボクより｜背《せ》が｜高《たか》い", "パパと｜虫《むし》とり｜楽《たの》しいな"]
+    )
+    
+    // プリンを見て喜んでいる女の子
+    static let questionChoice_14 = QuestionChoice(
+        answer: "プリンを｜見《み》て｜喜《よろこ》んでいる女の子",
+        answerWithRuby: "プリンを｜見《み》て｜喜《よろこ》んでいる｜女《おんな》の｜子《こ》",
+        choices: ["プリンがプルプル｜揺《ゆ》れている", "｜嬉《うれ》しくて｜顔《かお》が｜真《ま》っ｜赤《か》な｜女《おんな》の｜子《こ》", "プリンを｜見《み》て｜喜《よろこ》んでいる女の子"]
     )
 }
