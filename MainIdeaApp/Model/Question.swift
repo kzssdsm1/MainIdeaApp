@@ -8,9 +8,10 @@
 import Foundation
 import SwiftUI
 
-struct Question: Identifiable {
-    let id = UUID()
+struct Question {
+    let answer: String
+    let answerWithRuby: String
+    let choices: [String]
     let image: Image
-    let quiestions: [QuestionChoice]
-    let questionNumber: Int
+    var isCorrect = false
 }
