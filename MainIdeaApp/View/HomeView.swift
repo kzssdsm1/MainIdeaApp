@@ -35,7 +35,7 @@ struct HomeView: View {
                         .foregroundColor(.lightGray)
                 })
                 .navigationDestination(isPresented: $isPresentedQuestionsView) {
-                    QuestionsView()
+                    QuestionView(id: 0)
                 }
                 .padding(.bottom, screenHeight * 0.05)
                 

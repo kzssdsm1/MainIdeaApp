@@ -11,7 +11,7 @@ import SwiftUI
 struct MainIdeaAppApp: App {
     var body: some Scene {
         WindowGroup {
-            TestView()
+            HomeView()
         }
     }
 }
