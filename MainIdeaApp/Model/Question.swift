@@ -9,9 +9,8 @@ import Foundation
 import SwiftUI
 
 struct Question {
-    let answer: String
-    let answerWithRuby: String
+    let correctAnswerIndex: Int
+    let correctAnswerText: String
     let choices: [String]
-    let image: Image
-    var isCorrect = false
+    let imageName: String
 }
