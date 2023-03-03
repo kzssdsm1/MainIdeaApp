@@ -15,7 +15,7 @@ final class QuestionViewModel: ObservableObject {
     func addUserAnswer(id: Int, index: Int) {
         let removeIndex = id + 1
         
-        if userAnswers.count == removeIndex {
+        if userAnswers.count >= removeIndex {
             userAnswers.insert(index, at: id)
             userAnswers.remove(at: removeIndex)
         } else {
