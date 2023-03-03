@@ -9,11 +9,19 @@ import Foundation
 
 final class QuestionViewModel: ObservableObject {
     var questions = QuestionContext.questions.shuffled().prefix(5)
-    var correctAnswers = 0
+    var numCorrectAnswers = 0
+    var userAnswers = [Int]()
     
-    func checkAnswer(answer: String, index: Int) {
-        if answer == questions[index].answer {
-            questions[index].isCorrect = true
+    func addUserAnswer(id: Int, index: Int) {
+        let removeIndex = id + 1
+        
+        if userAnswers.count == removeIndex {
+            userAnswers.insert(index, at: id)
+            userAnswers.remove(at: removeIndex)
+        } else {
+            userAnswers.append(index)
         }
+        
+        print(userAnswers)
     }
 }

@@ -6,11 +6,14 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct Question {
     let correctAnswerIndex: Int
     let correctAnswerText: String
     let choices: [String]
     let imageName: String
+    
+    func checkAnswer(_ answer: Int) -> Bool {
+        return answer == correctAnswerIndex
+    }
 }

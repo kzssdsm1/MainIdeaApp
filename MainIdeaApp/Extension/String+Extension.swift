@@ -8,7 +8,7 @@
 import UIKit
 
 extension String {
-    func createRuby(color: UIColor = .black) -> NSAttributedString {
+    func createRuby(color: UIColor = .lightGray) -> NSAttributedString {
         let textWithRuby = replacingOccurrences(of: "(｜.+?《.+?》)", with: ",$1,", options: .regularExpression)
             .components(separatedBy: ",")
             .map { component -> NSAttributedString in

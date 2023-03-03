@@ -17,26 +17,25 @@ struct QuestionView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            viewModel.questions[id].image
+            Image(viewModel.questions[id].imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding()
             
-            ForEach(viewModel.questions[id].choices, id: \.self) { item in
+            ForEach(0..<viewModel.questions[id].choices.count, id: \.self) { index in
                 Button(action: {
-                    
+                    viewModel.addUserAnswer(id: id, index: index)
                 }, label: {
                     RubyLabelRepresentable(
-                        attributedText: item.createRuby(),
+                        attributedText: viewModel.questions[id].choices[index].createRuby(),
                         font: .systemFont(ofSize: 22),
                         textColor: .lightGray,
-                        textAlignment: .left
-                    )
+                        textAlignment: .left)
                 })
                 .padding()
             } // ForEach
         } // VStack
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.kokubanColor.edgesIgnoringSafeArea(.all))
-    }
+    } // body
 }
