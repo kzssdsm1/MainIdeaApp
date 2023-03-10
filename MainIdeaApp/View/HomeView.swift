@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject private var navManager: NavigationManager
+    
     @State private var isPresentedDescriptionView = false
     @State private var isPresentedQuestionsView = false
     
@@ -15,7 +17,7 @@ struct HomeView: View {
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navManager.path) {
             VStack(spacing: 0) {
                 Spacer(minLength: 0)
                 
@@ -28,14 +30,14 @@ struct HomeView: View {
                 Spacer(minLength: 0)
                 
                 Button(action: {
-                    isPresentedQuestionsView = true
+                    navManager.goToNextView(currentId: -1)
                 }, label: {
                     Text("もんだいをとく")
                         .font(.custom("KodomoRounded-Light", size: screenWidth * 0.1))
                         .foregroundColor(.lightGray)
                 })
-                .navigationDestination(isPresented: $isPresentedQuestionsView) {
-                    QuestionView()
+                .navigationDestination(for: Int.self) { id in
+                    TestView(viewId: id)
                 }
                 .padding(.bottom, screenHeight * 0.05)
                 

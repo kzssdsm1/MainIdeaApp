@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541F47B529BAF86000DD4158 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F47B429BAF86000DD4158 /* TestView.swift */; };
+		541F47B729BAF9F000DD4158 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F47B629BAF9F000DD4158 /* NavigationManager.swift */; };
 		545B41FE291CD02400D6C773 /* MainIdeaAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545B41FD291CD02400D6C773 /* MainIdeaAppApp.swift */; };
 		545B4202291CD02600D6C773 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545B4201291CD02600D6C773 /* Assets.xcassets */; };
 		545B4205291CD02600D6C773 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545B4204291CD02600D6C773 /* Preview Assets.xcassets */; };
@@ -19,12 +21,13 @@
 		54817C422967D7C200C9EFBD /* RubyLabelRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */; };
 		5493F17029A7347C00A4B61F /* QuestionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493F16F29A7347C00A4B61F /* QuestionContext.swift */; };
 		5493F17329A879B700A4B61F /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493F17229A879B700A4B61F /* QuestionViewModel.swift */; };
-		5493F17529A8822A00A4B61F /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493F17429A8822A00A4B61F /* QuestionView.swift */; };
 		5498C101292F513D00B11C9B /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C0FF292F513D00B11C9B /* KodomoRounded.otf */; };
 		5498C102292F513D00B11C9B /* KodomoRounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		541F47B429BAF86000DD4158 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		541F47B629BAF9F000DD4158 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		545B41FA291CD02400D6C773 /* MainIdeaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MainIdeaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545B41FD291CD02400D6C773 /* MainIdeaAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIdeaAppApp.swift; sourceTree = "<group>"; };
 		545B4201291CD02600D6C773 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,7 +41,6 @@
 		54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyLabelRepresentable.swift; sourceTree = "<group>"; };
 		5493F16F29A7347C00A4B61F /* QuestionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContext.swift; sourceTree = "<group>"; };
 		5493F17229A879B700A4B61F /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
-		5493F17429A8822A00A4B61F /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		5498C0FF292F513D00B11C9B /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
 		5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KodomoRounded-Light.otf"; sourceTree = "<group>"; };
 		5498C103292F51DC00B11C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				5472C170291E0CA300E22D80 /* Model */,
 				545B420B291CD2DB00D6C773 /* View */,
 				545B41FD291CD02400D6C773 /* MainIdeaAppApp.swift */,
+				541F47B629BAF9F000DD4158 /* NavigationManager.swift */,
 				545B4201291CD02600D6C773 /* Assets.xcassets */,
 				545B4203291CD02600D6C773 /* Preview Content */,
 			);
@@ -101,7 +104,7 @@
 			children = (
 				545B420C291CD2E700D6C773 /* HomeView.swift */,
 				5472C16E291E04E600E22D80 /* DescriptionView.swift */,
-				5493F17429A8822A00A4B61F /* QuestionView.swift */,
+				541F47B429BAF86000DD4158 /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,10 +227,11 @@
 			files = (
 				54619F4F293088BE00CAC961 /* Color+Extension.swift in Sources */,
 				54817C422967D7C200C9EFBD /* RubyLabelRepresentable.swift in Sources */,
+				541F47B529BAF86000DD4158 /* TestView.swift in Sources */,
 				54817C3D2967D68B00C9EFBD /* String+Extension.swift in Sources */,
 				5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */,
+				541F47B729BAF9F000DD4158 /* NavigationManager.swift in Sources */,
 				545B420D291CD2E700D6C773 /* HomeView.swift in Sources */,
-				5493F17529A8822A00A4B61F /* QuestionView.swift in Sources */,
 				5463EF072942FD34008CDF00 /* Question.swift in Sources */,
 				5493F17029A7347C00A4B61F /* QuestionContext.swift in Sources */,
 				54817C402967D6EE00C9EFBD /* RubyLabel.swift in Sources */,
