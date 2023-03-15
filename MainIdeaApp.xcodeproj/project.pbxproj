@@ -23,6 +23,9 @@
 		5493F17329A879B700A4B61F /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493F17229A879B700A4B61F /* QuestionViewModel.swift */; };
 		5498C101292F513D00B11C9B /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C0FF292F513D00B11C9B /* KodomoRounded.otf */; };
 		5498C102292F513D00B11C9B /* KodomoRounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */; };
+		54BA7DA029C1A3DF00569D94 /* QuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA7D9F29C1A3DF00569D94 /* QuestionListView.swift */; };
+		54BA7DA229C1A42200569D94 /* QuestionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA7DA129C1A42200569D94 /* QuestionListViewModel.swift */; };
+		54BA7DA429C1A72B00569D94 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA7DA329C1A72B00569D94 /* QuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		5498C0FF292F513D00B11C9B /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
 		5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KodomoRounded-Light.otf"; sourceTree = "<group>"; };
 		5498C103292F51DC00B11C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		54BA7D9F29C1A3DF00569D94 /* QuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListView.swift; sourceTree = "<group>"; };
+		54BA7DA129C1A42200569D94 /* QuestionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewModel.swift; sourceTree = "<group>"; };
+		54BA7DA329C1A72B00569D94 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 				545B420C291CD2E700D6C773 /* HomeView.swift */,
 				5472C16E291E04E600E22D80 /* DescriptionView.swift */,
 				541F47B429BAF86000DD4158 /* TestView.swift */,
+				54BA7D9F29C1A3DF00569D94 /* QuestionListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 			children = (
 				54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */,
 				54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */,
+				54BA7DA329C1A72B00569D94 /* QuestionView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -140,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				5493F17229A879B700A4B61F /* QuestionViewModel.swift */,
+				54BA7DA129C1A42200569D94 /* QuestionListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +243,9 @@
 				545B420D291CD2E700D6C773 /* HomeView.swift in Sources */,
 				5463EF072942FD34008CDF00 /* Question.swift in Sources */,
 				5493F17029A7347C00A4B61F /* QuestionContext.swift in Sources */,
+				54BA7DA029C1A3DF00569D94 /* QuestionListView.swift in Sources */,
+				54BA7DA429C1A72B00569D94 /* QuestionView.swift in Sources */,
+				54BA7DA229C1A42200569D94 /* QuestionListViewModel.swift in Sources */,
 				54817C402967D6EE00C9EFBD /* RubyLabel.swift in Sources */,
 				5493F17329A879B700A4B61F /* QuestionViewModel.swift in Sources */,
 				545B41FE291CD02400D6C773 /* MainIdeaAppApp.swift in Sources */,
