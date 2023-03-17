@@ -41,4 +41,15 @@ extension Color {
     
     // 黒板の色
     static let kokubanColor = Color(hex: "00552e")
+    
+    // 淡い緑色
+    static let paleGreen = Color(hex: "c0d985")
+    
+    // 淡いピンク色
+    static let palePink = Color(hex: "FFC1C1")
+    
+    // 円熟した橙色
+    static let matureOrange = Color(hex: "542d00")
+    
+    static let offWhite = Color(hex: "f8f8f8")
 }

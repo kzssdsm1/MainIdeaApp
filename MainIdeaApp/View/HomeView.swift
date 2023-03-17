@@ -37,7 +37,7 @@ struct HomeView: View {
                         .foregroundColor(.lightGray)
                 })
                 .navigationDestination(for: Int.self) { id in
-                    TestView(viewId: id)
+                    QuestionListView()
                 }
                 .padding(.bottom, screenHeight * 0.05)
                 
