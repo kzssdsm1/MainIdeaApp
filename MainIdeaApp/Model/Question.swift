@@ -9,7 +9,6 @@ import Foundation
 
 struct Question {
     let correctAnswerIndex: Int
-    let correctAnswerText: String
     let choices: [String]
     let imageName: String
     
