@@ -23,12 +23,12 @@ struct QuestionView: View {
                 .frame(height: screenHeight * 0.45)
                 .padding()
             
-            ForEach(0..<viewModel.questions[viewId].choices.count, id: \.self) { index in
+            ForEach(viewModel.questions[viewId].choices, id: \.self) { item in
                 Button(action: {
-                    print("test")
+                    viewModel.addAnswer(id: viewId, answerString: item)
                 }, label: {
                     RubyLabelRepresentable(
-                        attributedText: viewModel.questions[viewId].choices[index].createRuby(color: UIColor(.offWhite)),
+                        attributedText: item.createRuby(color: UIColor(.offWhite)),
                         font: .systemFont(ofSize: 21),
                         textColor: UIColor(.offWhite),
                         textAlignment: .left
