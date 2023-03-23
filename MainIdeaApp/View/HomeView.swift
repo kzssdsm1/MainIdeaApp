@@ -33,8 +33,9 @@ struct HomeView: View {
                     navManager.goToNextView(currentId: -1)
                 }, label: {
                     Text("もんだいをとく")
-                        .font(.custom("KodomoRounded-Light", size: screenWidth * 0.1))
+                        .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
                         .foregroundColor(.lightGray)
+                        .opacity(0.8)
                 })
                 .navigationDestination(for: Int.self) { id in
                     QuestionListView()
@@ -45,8 +46,9 @@ struct HomeView: View {
                     isPresentedDescriptionView = true
                 }, label: {
                     Text("アプリのつかいかた")
-                        .font(.custom("KodomoRounded-Light", size: screenWidth * 0.1))
+                        .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
                         .foregroundColor(.lightGray)
+                        .opacity(0.8)
                 })
                 .navigationDestination(isPresented: $isPresentedDescriptionView) {
                     DescriptionView()

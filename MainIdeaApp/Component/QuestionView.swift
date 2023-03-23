@@ -7,6 +7,51 @@
 
 import SwiftUI
 
+//struct QuestionView: View {
+//    @ObservedObject var viewModel: QuestionListViewModel
+//
+//    let viewId: Int
+//
+//    private let screenWidth = CGFloat(UIScreen.main.bounds.width)
+//    private let screenHeight = CGFloat(UIScreen.main.bounds.height)
+//
+//    var body: some View {
+//        VStack(spacing: 0) {
+//            Image(viewModel.questions[viewId].imageName)
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(height: screenHeight * 0.45)
+//                .padding()
+//
+//            ForEach(viewModel.questions[viewId].choices, id: \.self) { item in
+//                Button(action: {
+//                    viewModel.addAnswer(id: viewId, answerString: item)
+//                }, label: {
+//                    if viewModel.userAnswers.contains(item) {
+//                        RubyLabelRepresentable(
+//                            attributedText: item.createRuby(color: UIColor(.yellow)),
+//                            font: UIFont(name: "Tanuki-Permanent-Marker", size: 25)!,
+//                            textColor: UIColor(.yellow),
+//                            textAlignment: .left
+//                        )
+//                        .opacity(0.8)
+//
+//                    } else {
+//                        RubyLabelRepresentable(
+//                            attributedText: item.createRuby(color: UIColor(.white)),
+//                            font: UIFont(name: "Tanuki-Permanent-Marker", size: 25)!,
+//                            textColor: UIColor(.offWhite),
+//                            textAlignment: .left
+//                        )
+//                        .opacity(0.8)
+//                    }
+//                })
+//                .padding(10)
+//            } // ForEach
+//        } // VStack
+//    } // body
+//}
+
 struct QuestionView: View {
     @ObservedObject var viewModel: QuestionListViewModel
     
@@ -16,8 +61,10 @@ struct QuestionView: View {
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     
     var body: some View {
+        let question = viewModel.questions[viewId]
+        
         VStack(spacing: 0) {
-            Image(viewModel.questions[viewId].imageName)
+            Image(question.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: screenHeight * 0.45)
@@ -27,12 +74,24 @@ struct QuestionView: View {
                 Button(action: {
                     viewModel.addAnswer(id: viewId, answerString: item)
                 }, label: {
-                    RubyLabelRepresentable(
-                        attributedText: item.createRuby(color: UIColor(.offWhite)),
-                        font: .systemFont(ofSize: 21),
-                        textColor: UIColor(.offWhite),
-                        textAlignment: .left
-                    )
+                    if viewModel.userAnswers.contains(item) {
+                        RubyLabelRepresentable(
+                            attributedText: item.createRuby(color: UIColor(.yellow)),
+                            font: UIFont(name: "Tanuki-Permanent-Marker", size: 25)!,
+                            textColor: UIColor(.yellow),
+                            textAlignment: .left
+                        )
+                        .opacity(0.8)
+                        
+                    } else {
+                        RubyLabelRepresentable(
+                            attributedText: item.createRuby(color: UIColor(.white)),
+                            font: UIFont(name: "Tanuki-Permanent-Marker", size: 25)!,
+                            textColor: UIColor(.offWhite),
+                            textAlignment: .left
+                        )
+                        .opacity(0.8)
+                    }
                 })
                 .padding(10)
             } // ForEach

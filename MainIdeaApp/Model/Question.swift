@@ -11,8 +11,4 @@ struct Question {
     let correctAnswerIndex: Int
     let choices: [String]
     let imageName: String
-    
-    func checkAnswer(_ answer: Int) -> Bool {
-        return answer == correctAnswerIndex
-    }
 }

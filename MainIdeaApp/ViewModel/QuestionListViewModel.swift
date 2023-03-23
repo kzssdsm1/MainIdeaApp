@@ -8,17 +8,18 @@
 import Foundation
 
 final class QuestionListViewModel: ObservableObject {
-    @Published var questions = QuestionContext.questions.shuffled().prefix(5)
     @Published var userAnswers = [String]()
+    let questions = QuestionContext.questions.shuffled().prefix(5)
+    
+    private var unsortedUserAnswers = [Int: String]()
     
     func addAnswer(id: Int, answerString: String) {
-        let arrayCount = id + 1
+        unsortedUserAnswers[id] = answerString
         
-            if userAnswers.count < arrayCount {
-            userAnswers.append(answerString)
-        } else {
-            userAnswers.remove(at: id)
-            userAnswers.insert(answerString, at: id)
+        userAnswers = []
+        
+        for item in unsortedUserAnswers.sorted(by: { $0.key < $1.key }) {
+            userAnswers.append(item.value)
         }
     }
 }

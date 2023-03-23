@@ -11,8 +11,7 @@ class RubyLabel: UILabel {
     override func drawText(in rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
         
-        context.translateBy(x: 0, y: rect.height)
-        context.scaleBy(x: 1.0, y: -1.0)
+        context.concatenate(CGAffineTransform(scaleX: 1.0, y: -1.0).translatedBy(x: 0, y: -rect.height))
         
         guard let attributedText = attributedText else { return }
         
@@ -35,7 +34,7 @@ class RubyLabel: UILabel {
         }
         
         let setter = CTFramesetterCreateWithAttributedString(attributedText)
-        let range = CFRange()
+        let range = CFRangeMake(0, attributedText.length)
         let constraints = CGSize(width: maxWidth, height: CGFloat(UIScreen.main.bounds.height))
         let frameSize = CTFramesetterSuggestFrameSizeWithConstraints(setter, range, nil, constraints, nil)
         return CGSize(width: maxWidth, height: frameSize.height)
