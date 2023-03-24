@@ -7,31 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541F47B729BAF9F000DD4158 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F47B629BAF9F000DD4158 /* NavigationManager.swift */; };
+		543981D329CCC508006F76AD /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543981D229CCC508006F76AD /* ResultView.swift */; };
+		543981D529CCC523006F76AD /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543981D429CCC523006F76AD /* ResultViewModel.swift */; };
 		545B41FE291CD02400D6C773 /* MainIdeaAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545B41FD291CD02400D6C773 /* MainIdeaAppApp.swift */; };
 		545B4202291CD02600D6C773 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545B4201291CD02600D6C773 /* Assets.xcassets */; };
 		545B4205291CD02600D6C773 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545B4204291CD02600D6C773 /* Preview Assets.xcassets */; };
 		545B420D291CD2E700D6C773 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545B420C291CD2E700D6C773 /* HomeView.swift */; };
 		54619F4F293088BE00CAC961 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54619F4E293088BE00CAC961 /* Color+Extension.swift */; };
+		5463EF072942FD34008CDF00 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EF062942FD34008CDF00 /* Question.swift */; };
 		5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472C16E291E04E600E22D80 /* DescriptionView.swift */; };
-		5472C172291E0E4700E22D80 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472C171291E0E4700E22D80 /* NavigationDestination.swift */; };
-		5498C0FD292F4E4400B11C9B /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498C0FC292F4E4400B11C9B /* QuestionsView.swift */; };
-		5498C101292F513D00B11C9B /* KodomoRounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C0FF292F513D00B11C9B /* KodomoRounded.otf */; };
-		5498C102292F513D00B11C9B /* KodomoRounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */; };
+		54817C3D2967D68B00C9EFBD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C3C2967D68B00C9EFBD /* String+Extension.swift */; };
+		54817C402967D6EE00C9EFBD /* RubyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */; };
+		54817C422967D7C200C9EFBD /* RubyLabelRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */; };
+		5493F17029A7347C00A4B61F /* QuestionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493F16F29A7347C00A4B61F /* QuestionContext.swift */; };
+		54BA7DA029C1A3DF00569D94 /* QuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA7D9F29C1A3DF00569D94 /* QuestionListView.swift */; };
+		54BA7DA229C1A42200569D94 /* QuestionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA7DA129C1A42200569D94 /* QuestionListViewModel.swift */; };
+		54BA7DA429C1A72B00569D94 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA7DA329C1A72B00569D94 /* QuestionView.swift */; };
+		54D180EA29CB66EC00A10066 /* TanukiMagic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54D180E929CB66EC00A10066 /* TanukiMagic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		541F47B629BAF9F000DD4158 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		543981D229CCC508006F76AD /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		543981D429CCC523006F76AD /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		545B41FA291CD02400D6C773 /* MainIdeaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MainIdeaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545B41FD291CD02400D6C773 /* MainIdeaAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIdeaAppApp.swift; sourceTree = "<group>"; };
 		545B4201291CD02600D6C773 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545B4204291CD02600D6C773 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		545B420C291CD2E700D6C773 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		54619F4E293088BE00CAC961 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		5463EF062942FD34008CDF00 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		5472C16E291E04E600E22D80 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
-		5472C171291E0E4700E22D80 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
-		5498C0FC292F4E4400B11C9B /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
-		5498C0FF292F513D00B11C9B /* KodomoRounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KodomoRounded.otf; sourceTree = "<group>"; };
-		5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KodomoRounded-Light.otf"; sourceTree = "<group>"; };
+		54817C3C2967D68B00C9EFBD /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyLabel.swift; sourceTree = "<group>"; };
+		54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyLabelRepresentable.swift; sourceTree = "<group>"; };
+		5493F16F29A7347C00A4B61F /* QuestionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContext.swift; sourceTree = "<group>"; };
 		5498C103292F51DC00B11C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		54BA7D9F29C1A3DF00569D94 /* QuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListView.swift; sourceTree = "<group>"; };
+		54BA7DA129C1A42200569D94 /* QuestionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewModel.swift; sourceTree = "<group>"; };
+		54BA7DA329C1A72B00569D94 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		54D180E929CB66EC00A10066 /* TanukiMagic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TanukiMagic.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +80,15 @@
 		545B41FC291CD02400D6C773 /* MainIdeaApp */ = {
 			isa = PBXGroup;
 			children = (
+				5493F17129A8799600A4B61F /* ViewModel */,
+				54817C3E2967D6CF00C9EFBD /* Component */,
 				54619F4D2930889900CAC961 /* Extension */,
 				5498C103292F51DC00B11C9B /* Info.plist */,
 				5498C0FE292F511D00B11C9B /* Font */,
 				5472C170291E0CA300E22D80 /* Model */,
 				545B420B291CD2DB00D6C773 /* View */,
 				545B41FD291CD02400D6C773 /* MainIdeaAppApp.swift */,
+				541F47B629BAF9F000DD4158 /* NavigationManager.swift */,
 				545B4201291CD02600D6C773 /* Assets.xcassets */,
 				545B4203291CD02600D6C773 /* Preview Content */,
 			);
@@ -89,7 +108,8 @@
 			children = (
 				545B420C291CD2E700D6C773 /* HomeView.swift */,
 				5472C16E291E04E600E22D80 /* DescriptionView.swift */,
-				5498C0FC292F4E4400B11C9B /* QuestionsView.swift */,
+				54BA7D9F29C1A3DF00569D94 /* QuestionListView.swift */,
+				543981D229CCC508006F76AD /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -98,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				54619F4E293088BE00CAC961 /* Color+Extension.swift */,
+				54817C3C2967D68B00C9EFBD /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -105,16 +126,35 @@
 		5472C170291E0CA300E22D80 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5472C171291E0E4700E22D80 /* NavigationDestination.swift */,
+				5463EF062942FD34008CDF00 /* Question.swift */,
+				5493F16F29A7347C00A4B61F /* QuestionContext.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		54817C3E2967D6CF00C9EFBD /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */,
+				54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */,
+				54BA7DA329C1A72B00569D94 /* QuestionView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		5493F17129A8799600A4B61F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				54BA7DA129C1A42200569D94 /* QuestionListViewModel.swift */,
+				543981D429CCC523006F76AD /* ResultViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		5498C0FE292F511D00B11C9B /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				5498C100292F513D00B11C9B /* KodomoRounded-Light.otf */,
-				5498C0FF292F513D00B11C9B /* KodomoRounded.otf */,
+				54D180E929CB66EC00A10066 /* TanukiMagic.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -177,9 +217,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5498C101292F513D00B11C9B /* KodomoRounded.otf in Resources */,
-				5498C102292F513D00B11C9B /* KodomoRounded-Light.otf in Resources */,
 				545B4205291CD02600D6C773 /* Preview Assets.xcassets in Resources */,
+				54D180EA29CB66EC00A10066 /* TanukiMagic.ttf in Resources */,
 				545B4202291CD02600D6C773 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,11 +230,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5472C172291E0E4700E22D80 /* NavigationDestination.swift in Sources */,
 				54619F4F293088BE00CAC961 /* Color+Extension.swift in Sources */,
+				543981D529CCC523006F76AD /* ResultViewModel.swift in Sources */,
+				54817C422967D7C200C9EFBD /* RubyLabelRepresentable.swift in Sources */,
+				54817C3D2967D68B00C9EFBD /* String+Extension.swift in Sources */,
 				5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */,
+				541F47B729BAF9F000DD4158 /* NavigationManager.swift in Sources */,
+				543981D329CCC508006F76AD /* ResultView.swift in Sources */,
 				545B420D291CD2E700D6C773 /* HomeView.swift in Sources */,
-				5498C0FD292F4E4400B11C9B /* QuestionsView.swift in Sources */,
+				5463EF072942FD34008CDF00 /* Question.swift in Sources */,
+				5493F17029A7347C00A4B61F /* QuestionContext.swift in Sources */,
+				54BA7DA029C1A3DF00569D94 /* QuestionListView.swift in Sources */,
+				54BA7DA429C1A72B00569D94 /* QuestionView.swift in Sources */,
+				54BA7DA229C1A42200569D94 /* QuestionListViewModel.swift in Sources */,
+				54817C402967D6EE00C9EFBD /* RubyLabel.swift in Sources */,
 				545B41FE291CD02400D6C773 /* MainIdeaAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
