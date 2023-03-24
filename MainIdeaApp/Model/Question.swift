@@ -8,7 +8,7 @@
 import Foundation
 
 struct Question {
-    let correctAnswerIndex: Int
+    let correctAnswer: String
     let choices: [String]
     let imageName: String
 }
