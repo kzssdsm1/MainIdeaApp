@@ -11,6 +11,13 @@ struct ResultView: View {
     @StateObject var viewModel: ResultViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack {
+            Text(String(viewModel.appearUserScore))
+                .onAppear {
+                    withAnimation {
+                        viewModel.presentScoreWithAnimation()
+                    } // withAnimation
+                }
+        }
+    } // body
 }

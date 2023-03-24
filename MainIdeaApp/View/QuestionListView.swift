@@ -38,7 +38,7 @@ struct QuestionListView: View {
                                 }, label: {
                                     Image("wood_kanban5")
                                         .resizable()
-                                        .frame(width: 180, height: 90)
+                                        .frame(width: 180, height: 80)
                                         .overlay(
                                             RubyLabelRepresentable(
                                                 attributedText: previousButtonText(for: index).createRuby(color: UIColor(.offWhite)),
@@ -64,7 +64,7 @@ struct QuestionListView: View {
                                 }, label: {
                                     Image("wood_kanban5")
                                         .resizable()
-                                        .frame(width: 160, height: 90)
+                                        .frame(width: 160, height: 80)
                                         .overlay(
                                             RubyLabelRepresentable(
                                                 attributedText: nextButtonText(for: index).createRuby(color: UIColor(.offWhite)),
