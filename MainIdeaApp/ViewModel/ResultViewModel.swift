@@ -42,6 +42,19 @@ final class ResultViewModel: ObservableObject {
         }
     }
     
+    func getTextForResult() -> String {
+        switch userScore {
+        case 5:
+            return "｜大変《たいへん》よく｜出来《でき》ました"
+        case 2...4:
+            return "よく｜出来《でき》ました"
+        case 0...1:
+            return "｜次《つぎ》はがんばろう"
+        default:
+            return "｜大変《たいへん》よく｜出来《でき》ました"
+        }
+    }
+    
     func presentScoreWithAnimation() {
         let duration = 1.2
         let interval = 0.3

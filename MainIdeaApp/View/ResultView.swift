@@ -15,6 +15,15 @@ struct ResultView: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            RubyLabelRepresentable(
+                attributedText: viewModel.getTextForResult().createRuby(color: UIColor(.offWhite)),
+                font: UIFont(name: "Tanuki-Permanent-Marker", size: 27)!,
+                textColor: UIColor(.offWhite),
+                textAlignment: .center
+            )
+            .opacity(showingImageOpacity ? 0.8 : 0)
+            .padding()
+            
             if viewModel.isShowingResultImage {
                 Image(viewModel.getImageNameForScore())
                     .resizable()
