@@ -61,10 +61,10 @@ struct QuestionView: View {
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     
     var body: some View {
-        let question = viewModel.questions[viewId]
+        //let question = viewModel.questions[viewId]
         
         VStack(spacing: 0) {
-            Image(question.imageName)
+            Image(viewModel.questions[viewId].imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: screenHeight * 0.45)
