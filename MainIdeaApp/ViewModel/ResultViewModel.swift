@@ -29,12 +29,6 @@ final class ResultViewModel: ObservableObject {
         self.questions = questions
     }
     
-    private func presentResultImageWithAnimation() {
-        UIView.animate(withDuration: 1.2) {
-            self.isShowingResultImage = true
-        }
-    }
-    
     func getImageNameForScore() -> String {
         switch userScore {
         case 5:
@@ -62,7 +56,7 @@ final class ResultViewModel: ObservableObject {
                     timer.invalidate()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + ((0...1 ~= self.userScore) ? 0.8 : 0.6)) {
-                        self.presentResultImageWithAnimation()
+                        self.isShowingResultImage = true
                     }
                 }
             }
