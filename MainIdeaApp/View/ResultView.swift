@@ -80,30 +80,22 @@ struct ResultView: View {
                                     Spacer()
                                     
                                     Button(action: {
-                                        if index == 0 {
-                                            withAnimation {
-                                                scrollProxy.scrollTo(1)
-                                            } // withAnimation
-                                        } else {
-                                            withAnimation {
-                                                scrollProxy.scrollTo(index - 1)
-                                            } // withAnimation
-                                        }
+                                        let targetIndex = index == 0 ? 1 : index - 1
+                                        
+                                        withAnimation {
+                                            scrollProxy.scrollTo(targetIndex)
+                                        } // withAnimation
                                     }, label: {
                                         scrollButtonLabel(previousButtonText(for: index), width: 180, height: 80)
                                     })
                                     .padding()
                                     
                                     Button(action: {
-                                        if index == viewModel.questions.count - 1 {
-                                            withAnimation {
-                                                scrollProxy.scrollTo(0)
-                                            } // withAnimation
-                                        } else {
-                                            withAnimation {
-                                                scrollProxy.scrollTo(index + 1)
-                                            } // withAnimation
-                                        }
+                                        let targetIndex = index == viewModel.questions.count - 1 ? 0 : index + 1
+                                        
+                                        withAnimation {
+                                            scrollProxy.scrollTo(targetIndex)
+                                        } // withAnimation
                                     }, label: {
                                         scrollButtonLabel(nextButtonText(for: index), width: 160, height: 80)
                                     })
@@ -121,7 +113,7 @@ struct ResultView: View {
                         } // ForEach
                     }
                 } // VStack
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .background(Color.kokubanColor.edgesIgnoringSafeArea(.all))
             } // ScrollView
         } // ScrollViewReader
