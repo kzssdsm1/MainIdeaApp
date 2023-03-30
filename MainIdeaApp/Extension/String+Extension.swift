@@ -20,7 +20,6 @@ extension String {
                 let rubyText = component.replacingOccurrences(of: "｜.+?《(.+?)》", with: "$1", options: .regularExpression)
 
                 let rubyAttribute: [CFString: Any] = [
-//                    kCTRubyAnnotationScaleToFitAttributeName: true,
                     kCTRubyAnnotationSizeFactorAttributeName: 0.5,
                     kCTForegroundColorAttributeName: color
                 ]
