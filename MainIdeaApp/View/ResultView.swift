@@ -113,9 +113,9 @@ struct ResultView: View {
                         } // ForEach
                     }
                 } // VStack
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                .background(Color.kokubanColor.edgesIgnoringSafeArea(.all))
             } // ScrollView
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.kokubanColor.edgesIgnoringSafeArea(.all))
         } // ScrollViewReader
     } // body
     
