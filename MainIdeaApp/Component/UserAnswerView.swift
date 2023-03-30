@@ -23,55 +23,27 @@ struct UserAnswerView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Image(viewModel.questions[viewId].imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: screenHeight * 0.35)
-                .padding()
+            resultImage()
             
-            RubyLabelRepresentable(
-                attributedText: "｜君《きみ》の｜回答《かいとう》：".createRuby(color: UIColor(.offWhite)),
-                font: UIFont(name: "Tanuki-Permanent-Marker", size: 22)!,
-                textColor: UIColor(.offWhite),
-                textAlignment: .left
-            )
-            .opacity(0.8)
-            .padding(.horizontal)
-            .padding(.bottom, 10)
+            rubyLabel("｜君《きみ》の｜回答《かいとう》：", font: "Tanuki-Permanent-Marker", fontSize: 22, textColor: UIColor(.offWhite), bottomPadding: 10)
             
-            RubyLabelRepresentable(
-                attributedText: viewModel.userAnswers[viewId].createRuby(color: UIColor(.offWhite)),
-                font: UIFont(name: "Tanuki-Permanent-Marker", size: 25)!,
-                textColor: UIColor(.offWhite),
-                textAlignment: .left
-            )
-            .opacity(0.8)
-            .padding(.horizontal)
-            .padding(.bottom, 30)
+            rubyLabel(viewModel.userAnswers[viewId], font: "Tanuki-Permanent-Marker", fontSize: 25, textColor: UIColor(.offWhite), bottomPadding: 30)
             
-            RubyLabelRepresentable(
-                attributedText: "｜正解《せいかい》：".createRuby(color: UIColor(.offWhite)),
-                font: UIFont(name: "Tanuki-Permanent-Marker", size: 22)!,
-                textColor: UIColor(.offWhite),
-                textAlignment: .left
-            )
-            .opacity(0.8)
-            .padding(.horizontal)
-            .padding(.bottom, 10)
+            rubyLabel("｜正解《せいかい》：", font: "Tanuki-Permanent-Marker", fontSize: 22, textColor: UIColor(.offWhite), bottomPadding: 10)
             
-            RubyLabelRepresentable(
-                attributedText: viewModel.questions[viewId].correctAnswer.createRuby(color: UIColor(.offWhite)),
-                font: UIFont(name: "Tanuki-Permanent-Marker", size: 25)!,
-                textColor: UIColor(.offWhite),
-                textAlignment: .left
-            )
-            .opacity(0.8)
-            .padding(.horizontal)
-            .padding(.bottom, 30)
+            rubyLabel(viewModel.questions[viewId].correctAnswer, font: "Tanuki-Permanent-Marker", fontSize: 25, textColor: UIColor(.offWhite), bottomPadding: 30)
             
             resultLabel()
         } // VStack
     } // body
+    
+    private func resultImage() -> some View {
+        Image(viewModel.questions[viewId].imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(height: screenHeight * 0.35)
+            .padding()
+    }
     
     private func resultLabel() -> some View {
         RubyLabelRepresentable(
@@ -83,5 +55,17 @@ struct UserAnswerView: View {
         .opacity(0.8)
         .padding(.horizontal)
         .padding(.bottom, 30)
+    }
+    
+    private func rubyLabel(_ text: String, font: String, fontSize: CGFloat, textColor: UIColor, textAlignment: NSTextAlignment = .left, bottomPadding: CGFloat) -> some View {
+        RubyLabelRepresentable(
+            attributedText: text.createRuby(color: textColor),
+            font: UIFont(name: font, size: fontSize)!,
+            textColor: textColor,
+            textAlignment: textAlignment
+        )
+        .opacity(0.8)
+        .padding(.horizontal)
+        .padding(.bottom, bottomPadding)
     }
 }
