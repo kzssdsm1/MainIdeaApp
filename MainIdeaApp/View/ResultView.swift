@@ -9,23 +9,19 @@ import SwiftUI
 
 struct ResultView: View {
     @StateObject var viewModel: ResultViewModel
+    
     @State private var isShowingResultComponents = false
     
     private let screenWidth = CGFloat(UIScreen.main.bounds.width)
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
+    private let textColor = UIColor(.offWhite)
     
     var body: some View {
         ScrollViewReader { scrollProxy in
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
-                    RubyLabelRepresentable(
-                        attributedText: viewModel.getTextForResult().createRuby(color: UIColor(.offWhite)),
-                        font: UIFont(name: "Tanuki-Permanent-Marker", size: 27)!,
-                        textColor: UIColor(.offWhite),
-                        textAlignment: .center
-                    )
-                    .opacity(isShowingResultComponents ? 0.8 : 0)
-                    .padding()
+                    rubyLabel(viewModel.getTextForResult(), fontSize: 27, opacity: isShowingResultComponents ? 0.8 : 0)
+                        .padding()
                     
                     if viewModel.isShowingResultImage {
                         Image(viewModel.getImageNameForScore())
@@ -46,14 +42,8 @@ struct ResultView: View {
                             .padding()
                     }
                     
-                    RubyLabelRepresentable(
-                        attributedText: "｜君《きみ》の｜得点《とくてん》".createRuby(color: UIColor(.offWhite)),
-                        font: UIFont(name: "Tanuki-Permanent-Marker", size: 27)!,
-                        textColor: UIColor(.offWhite),
-                        textAlignment: .center
-                    )
-                    .opacity(0.8)
-                    .padding()
+                    rubyLabel("｜君《きみ》の｜得点《とくてん》", fontSize: 27)
+                        .padding()
                     
                     Text("\(viewModel.displayedUserScore)点")
                         .foregroundColor(.offWhite)
@@ -71,18 +61,7 @@ struct ResultView: View {
                             scrollProxy.scrollTo(0)
                         } // withAnimation
                     }, label: {
-                        Image("wood_kanban5")
-                            .resizable()
-                            .frame(width: 200, height: 80)
-                            .overlay(
-                                RubyLabelRepresentable(
-                                    attributedText: "｜答《こた》え｜合《あ》わせをする".createRuby(color: UIColor(.offWhite)),
-                                    font: UIFont(name: "Tanuki-Permanent-Marker", size: 20)!,
-                                    textColor: UIColor(.offWhite),
-                                    textAlignment: .center
-                                )
-                                .opacity(0.8)
-                            )
+                        scrollButtonLabel("｜答《こた》え｜合《あ》わせをする", width: 200, height: 80)
                     })
                     .opacity(isShowingResultComponents ? 1 : 0.6)
                     .disabled(!isShowingResultComponents)
@@ -97,6 +76,43 @@ struct ResultView: View {
                             VStack {
                                 UserAnswerView(viewModel: viewModel, viewId: index)
                                 
+                                HStack {
+                                    Spacer()
+                                    
+                                    Button(action: {
+                                        if index == 0 {
+                                            withAnimation {
+                                                scrollProxy.scrollTo(1)
+                                            } // withAnimation
+                                        } else {
+                                            withAnimation {
+                                                scrollProxy.scrollTo(index - 1)
+                                            } // withAnimation
+                                        }
+                                    }, label: {
+                                        scrollButtonLabel(previousButtonText(for: index), width: 180, height: 80)
+                                    })
+                                    .padding()
+                                    
+                                    Button(action: {
+                                        if index == viewModel.questions.count - 1 {
+                                            withAnimation {
+                                                scrollProxy.scrollTo(0)
+                                            } // withAnimation
+                                        } else {
+                                            withAnimation {
+                                                scrollProxy.scrollTo(index + 1)
+                                            } // withAnimation
+                                        }
+                                    }, label: {
+                                        scrollButtonLabel(nextButtonText(for: index), width: 160, height: 80)
+                                    })
+                                    .opacity(index != 0 ? 1 : 0)
+                                    .padding()
+                                    
+                                    Spacer()
+                                } // HStack
+                                
                                 Divider()
                                     .frame(width: screenWidth - 20)
                                     .background(Color.offWhite)
@@ -110,4 +126,31 @@ struct ResultView: View {
             } // ScrollView
         } // ScrollViewReader
     } // body
+    
+    private func previousButtonText(for index: Int) -> String {
+        return index == 0 ? "｜次《つぎ》の｜問題《もんだい》へ" : "｜一《ひと》つ｜前《まえ》の｜問題《もんだい》へ"
+    }
+    
+    private func nextButtonText(for index: Int) -> String {
+        return index == viewModel.questions.count - 1 ? "｜最初《さいしょ》の｜問題《もんだい》へ" : "｜次《つぎ》の｜問題《もんだい》へ"
+    }
+    
+    private func rubyLabel(_ text: String, fontSize: CGFloat, textAlignment: NSTextAlignment = .center, opacity: Double = 0.8) -> some View {
+        RubyLabelRepresentable(
+            attributedText: text.createRuby(color: textColor),
+            font: .chalkFont(ofSize: fontSize),
+            textColor: textColor,
+            textAlignment: textAlignment
+        )
+        .opacity(opacity)
+    }
+    
+    private func scrollButtonLabel(_ text: String, fontSize: CGFloat = 20, width: CGFloat, height: CGFloat) -> some View {
+        Image("wood_kanban5")
+            .resizable()
+            .frame(width: width, height: height)
+            .overlay(
+                rubyLabel(text, fontSize: fontSize)
+            )
+    }
 }

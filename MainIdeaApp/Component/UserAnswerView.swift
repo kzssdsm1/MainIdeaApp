@@ -32,9 +32,9 @@ struct UserAnswerView: View {
             
             rubyLabel("｜正解《せいかい》：", fontSize: 22, textColor: answerTextColor, bottomPadding: 10)
             
-            rubyLabel(viewModel.questions[viewId].correctAnswer, fontSize: 25, textColor: answerTextColor, bottomPadding: 30)
+            rubyLabel(viewModel.questions[viewId].correctAnswer, fontSize: 25, textColor: answerTextColor, bottomPadding: 20)
             
-            rubyLabel(resultLabelText, fontSize: 27, textColor: UIColor(resultLabelColor), textAlignment: .center, bottomPadding: 30)
+            rubyLabel(resultLabelText, fontSize: 27, textColor: UIColor(resultLabelColor), textAlignment: .center, bottomPadding: 5)
         } // VStack
     } // body
     
