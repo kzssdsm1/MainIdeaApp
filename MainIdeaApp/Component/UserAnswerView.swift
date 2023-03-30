@@ -13,6 +13,7 @@ struct UserAnswerView: View {
     let viewId: Int
     
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
+    private let answerTextColor = UIColor(.offWhite)
     
     private var resultLabelText: String {
         return viewModel.userAnswers[viewId] == viewModel.questions[viewId].correctAnswer ? "｜正解《せいかい》！" : "｜不正解《ふせいかい》・・・"
@@ -25,13 +26,13 @@ struct UserAnswerView: View {
         VStack(spacing: 0) {
             resultImage()
             
-            rubyLabel("｜君《きみ》の｜回答《かいとう》：", font: "Tanuki-Permanent-Marker", fontSize: 22, textColor: UIColor(.offWhite), bottomPadding: 10)
+            rubyLabel("｜君《きみ》の｜回答《かいとう》：", fontSize: 22, textColor: answerTextColor, bottomPadding: 10)
             
-            rubyLabel(viewModel.userAnswers[viewId], font: "Tanuki-Permanent-Marker", fontSize: 25, textColor: UIColor(.offWhite), bottomPadding: 30)
+            rubyLabel(viewModel.userAnswers[viewId], fontSize: 25, textColor: answerTextColor, bottomPadding: 30)
             
-            rubyLabel("｜正解《せいかい》：", font: "Tanuki-Permanent-Marker", fontSize: 22, textColor: UIColor(.offWhite), bottomPadding: 10)
+            rubyLabel("｜正解《せいかい》：", fontSize: 22, textColor: answerTextColor, bottomPadding: 10)
             
-            rubyLabel(viewModel.questions[viewId].correctAnswer, font: "Tanuki-Permanent-Marker", fontSize: 25, textColor: UIColor(.offWhite), bottomPadding: 30)
+            rubyLabel(viewModel.questions[viewId].correctAnswer, fontSize: 25, textColor: answerTextColor, bottomPadding: 30)
             
             resultLabel()
         } // VStack
@@ -48,7 +49,7 @@ struct UserAnswerView: View {
     private func resultLabel() -> some View {
         RubyLabelRepresentable(
             attributedText: resultLabelText.createRuby(color: UIColor(resultLabelColor)),
-            font: UIFont(name: "Tanuki-Permanent-Marker", size: 27)!,
+            font: .chalkFont(ofSize: 27),
             textColor: UIColor(resultLabelColor),
             textAlignment: .center
         )
@@ -57,10 +58,10 @@ struct UserAnswerView: View {
         .padding(.bottom, 30)
     }
     
-    private func rubyLabel(_ text: String, font: String, fontSize: CGFloat, textColor: UIColor, textAlignment: NSTextAlignment = .left, bottomPadding: CGFloat) -> some View {
+    private func rubyLabel(_ text: String, fontSize: CGFloat, textColor: UIColor, textAlignment: NSTextAlignment = .left, bottomPadding: CGFloat) -> some View {
         RubyLabelRepresentable(
             attributedText: text.createRuby(color: textColor),
-            font: UIFont(name: font, size: fontSize)!,
+            font: .chalkFont(ofSize: fontSize),
             textColor: textColor,
             textAlignment: textAlignment
         )

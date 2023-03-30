@@ -17,6 +17,7 @@
 		545B420D291CD2E700D6C773 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545B420C291CD2E700D6C773 /* HomeView.swift */; };
 		54619F4F293088BE00CAC961 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54619F4E293088BE00CAC961 /* Color+Extension.swift */; };
 		5463EF072942FD34008CDF00 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EF062942FD34008CDF00 /* Question.swift */; };
+		546C3E6B29D5ACC800674BC6 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C3E6A29D5ACC800674BC6 /* UIFont+Extension.swift */; };
 		5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472C16E291E04E600E22D80 /* DescriptionView.swift */; };
 		54817C3D2967D68B00C9EFBD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C3C2967D68B00C9EFBD /* String+Extension.swift */; };
 		54817C402967D6EE00C9EFBD /* RubyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */; };
@@ -40,6 +41,7 @@
 		545B420C291CD2E700D6C773 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		54619F4E293088BE00CAC961 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		5463EF062942FD34008CDF00 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		546C3E6A29D5ACC800674BC6 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		5472C16E291E04E600E22D80 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		54817C3C2967D68B00C9EFBD /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyLabel.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				54619F4E293088BE00CAC961 /* Color+Extension.swift */,
 				54817C3C2967D68B00C9EFBD /* String+Extension.swift */,
+				546C3E6A29D5ACC800674BC6 /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				545B420D291CD2E700D6C773 /* HomeView.swift in Sources */,
 				5463EF072942FD34008CDF00 /* Question.swift in Sources */,
 				544CF36229D4A68200A4CB6F /* UserAnswerView.swift in Sources */,
+				546C3E6B29D5ACC800674BC6 /* UIFont+Extension.swift in Sources */,
 				5493F17029A7347C00A4B61F /* QuestionContext.swift in Sources */,
 				54BA7DA029C1A3DF00569D94 /* QuestionListView.swift in Sources */,
 				54BA7DA429C1A72B00569D94 /* QuestionView.swift in Sources */,
