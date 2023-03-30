@@ -34,7 +34,7 @@ struct UserAnswerView: View {
             
             rubyLabel(viewModel.questions[viewId].correctAnswer, fontSize: 25, textColor: answerTextColor, bottomPadding: 30)
             
-            resultLabel()
+            rubyLabel(resultLabelText, fontSize: 27, textColor: UIColor(resultLabelColor), textAlignment: .center, bottomPadding: 30)
         } // VStack
     } // body
     
@@ -44,18 +44,6 @@ struct UserAnswerView: View {
             .aspectRatio(contentMode: .fit)
             .frame(height: screenHeight * 0.35)
             .padding()
-    }
-    
-    private func resultLabel() -> some View {
-        RubyLabelRepresentable(
-            attributedText: resultLabelText.createRuby(color: UIColor(resultLabelColor)),
-            font: .chalkFont(ofSize: 27),
-            textColor: UIColor(resultLabelColor),
-            textAlignment: .center
-        )
-        .opacity(0.8)
-        .padding(.horizontal)
-        .padding(.bottom, 30)
     }
     
     private func rubyLabel(_ text: String, fontSize: CGFloat, textColor: UIColor, textAlignment: NSTextAlignment = .left, bottomPadding: CGFloat) -> some View {
