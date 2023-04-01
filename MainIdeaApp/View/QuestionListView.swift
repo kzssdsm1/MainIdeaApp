@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct QuestionListView: View {
+    @EnvironmentObject private var navManager: NavigationManager
+    
     @StateObject private var viewModel = QuestionListViewModel()
     
     @State private var isPresentedResultView = false
@@ -91,7 +93,7 @@ struct QuestionListView: View {
                         Spacer()
                         
                         Button(action: {
-                            isPresentedResultView = true
+                            navManager.navigationPath.append(0.1)
                         }, label: {
                             Rectangle()
                                 .cornerRadius(20)
@@ -107,8 +109,8 @@ struct QuestionListView: View {
                                     .opacity(0.8)
                                 )
                         })
-                        .navigationDestination(isPresented: $isPresentedResultView) {
-                            ResultView(viewModel: ResultViewModel(userAnswers: viewModel.userAnswers, questions: Array(viewModel.questions))) 
+                        .navigationDestination(for: Double.self) { _ in
+                            ResultView(viewModel: ResultViewModel(userAnswers: viewModel.userAnswers, questions: Array(viewModel.questions)))
                         }
                         .disabled(viewModel.userAnswers.count < 5)
                         .opacity(viewModel.userAnswers.count < 5 ? 0.5 : 1)

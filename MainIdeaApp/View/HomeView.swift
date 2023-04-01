@@ -17,7 +17,7 @@ struct HomeView: View {
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     
     var body: some View {
-        NavigationStack(path: $navManager.path) {
+        NavigationStack(path: $navManager.navigationPath) {
             VStack(spacing: 0) {
                 Spacer(minLength: 0)
                 
@@ -30,27 +30,27 @@ struct HomeView: View {
                 Spacer(minLength: 0)
                 
                 Button(action: {
-                    navManager.goToNextView(currentId: -1)
+                    navManager.navigationPath.append(NavigationIdentifier.questions)
                 }, label: {
                     Text("もんだいをとく")
                         .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
                         .foregroundColor(.lightGray)
                         .opacity(0.8)
                 })
-                .navigationDestination(for: Int.self) { id in
+                .navigationDestination(for: NavigationIdentifier.self) { _ in
                     QuestionListView()
                 }
                 .padding(.bottom, screenHeight * 0.05)
                 
                 Button(action: {
-                    isPresentedDescriptionView = true
+                    navManager.navigationPath.append(1)
                 }, label: {
                     Text("アプリのつかいかた")
                         .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
                         .foregroundColor(.lightGray)
                         .opacity(0.8)
                 })
-                .navigationDestination(isPresented: $isPresentedDescriptionView) {
+                .navigationDestination(for: Int.self) { _ in
                     DescriptionView()
                 }
                 
