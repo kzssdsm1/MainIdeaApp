@@ -20,7 +20,9 @@ struct ResultView: View {
         ScrollViewReader { scrollProxy in
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
-                    rubyLabel(viewModel.getTextForResult(), fontSize: 27, opacity: isShowingResultComponents ? 0.8 : 0)
+                    Spacer(minLength: 30)
+                    
+                    rubyLabel(viewModel.getTextForResult(), fontSize: 28, opacity: isShowingResultComponents ? 0.8 : 0)
                         .padding()
                     
                     if viewModel.isShowingResultImage {
@@ -38,7 +40,7 @@ struct ResultView: View {
                     } else {
                         Rectangle()
                             .foregroundColor(.clear)
-                            .frame(height: screenHeight * 0.45)
+                            .frame(height: screenHeight * 0.40)
                             .padding()
                     }
                     
@@ -66,6 +68,8 @@ struct ResultView: View {
                     .opacity(isShowingResultComponents ? 1 : 0.6)
                     .disabled(!isShowingResultComponents)
                     .padding()
+                    
+                    Spacer(minLength: 30)
                     
                     Divider()
                         .frame(width: screenWidth - 20)

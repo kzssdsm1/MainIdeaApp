@@ -43,7 +43,8 @@ struct UserAnswerView: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(height: screenHeight * 0.35)
-            .padding()
+            .padding([.horizontal, .bottom])
+            .padding(.top, 15)
     }
     
     private func rubyLabel(_ text: String, fontSize: CGFloat, textColor: UIColor, textAlignment: NSTextAlignment = .left, bottomPadding: CGFloat) -> some View {
