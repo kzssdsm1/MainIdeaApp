@@ -11,8 +11,8 @@ final class ResultViewModel: ObservableObject {
     @Published var displayedUserScore = 0
     @Published var isShowingResultImage = false
     
-    let userAnswers: [String]
-    let questions: [Question]
+    let userAnswers = QuestionManager.shared.accessorForUserAnswers()
+    let questions = QuestionManager.shared.accessorForQuestions()
     
     private var userScore: Int {
         var score = 0
@@ -22,11 +22,6 @@ final class ResultViewModel: ObservableObject {
             }
         }
         return score
-    }
-    
-    init(userAnswers: [String], questions: [Question]) {
-        self.userAnswers = userAnswers
-        self.questions = questions
     }
     
     func getImageNameForScore() -> String {

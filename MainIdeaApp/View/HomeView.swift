@@ -10,9 +10,6 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var navManager: NavigationManager
     
-    @State private var isPresentedDescriptionView = false
-    @State private var isPresentedQuestionsView = false
-    
     private let screenWidth = CGFloat(UIScreen.main.bounds.width)
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     
@@ -30,29 +27,23 @@ struct HomeView: View {
                 Spacer(minLength: 0)
                 
                 Button(action: {
-                    navManager.navigationPath.append(NavigationIdentifier.questions)
+                    navManager.setNavigationPath(.questions)
                 }, label: {
                     Text("もんだいをとく")
                         .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
                         .foregroundColor(.lightGray)
                         .opacity(0.8)
                 })
-                .navigationDestination(for: NavigationIdentifier.self) { _ in
-                    QuestionListView()
-                }
                 .padding(.bottom, screenHeight * 0.05)
                 
                 Button(action: {
-                    navManager.navigationPath.append(1)
+                    navManager.setNavigationPath(.description)
                 }, label: {
                     Text("アプリのつかいかた")
                         .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
                         .foregroundColor(.lightGray)
                         .opacity(0.8)
                 })
-                .navigationDestination(for: Int.self) { _ in
-                    DescriptionView()
-                }
                 
                 Spacer(minLength: 0)
                 
@@ -63,6 +54,13 @@ struct HomeView: View {
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.kokubanColor.edgesIgnoringSafeArea(.all))
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .questions: QuestionListView()
+                case .description: DescriptionView()
+                case .result: ResultView()
+                }
+            }
         } // NavigationStack
     } // body
 }

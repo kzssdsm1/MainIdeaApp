@@ -12,8 +12,6 @@ struct QuestionListView: View {
     
     @StateObject private var viewModel = QuestionListViewModel()
     
-    @State private var isPresentedResultView = false
-    
     private let screenWidth = CGFloat(UIScreen.main.bounds.width)
     
     var body: some View {
@@ -93,7 +91,7 @@ struct QuestionListView: View {
                         Spacer()
                         
                         Button(action: {
-                            navManager.navigationPath.append(0.1)
+                            navigationToResult()
                         }, label: {
                             Rectangle()
                                 .cornerRadius(20)
@@ -109,9 +107,6 @@ struct QuestionListView: View {
                                     .opacity(0.8)
                                 )
                         })
-                        .navigationDestination(for: Double.self) { _ in
-                            ResultView(viewModel: ResultViewModel(userAnswers: viewModel.userAnswers, questions: Array(viewModel.questions)))
-                        }
                         .disabled(viewModel.userAnswers.count < 5)
                         .opacity(viewModel.userAnswers.count < 5 ? 0.5 : 1)
                         
@@ -130,5 +125,10 @@ struct QuestionListView: View {
     
     private func nextButtonText(for index: Int) -> String {
         return index == viewModel.questions.count - 1 ? "｜最初《さいしょ》の｜問題《もんだい》へ" : "｜次《つぎ》の｜問題《もんだい》へ"
+    }
+    
+    private func navigationToResult() {
+        QuestionManager.shared.setterForProperties(questions: Array(viewModel.questions), userAnswers: viewModel.userAnswers)
+        navManager.navigationPath.append(.result)
     }
 }

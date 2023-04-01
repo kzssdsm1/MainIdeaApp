@@ -8,5 +8,15 @@
 import SwiftUI
 
 final class NavigationManager: ObservableObject {
-    @Published var navigationPath = NavigationPath()
+    @Published var navigationPath = [Route]()
+    
+    func setNavigationPath(_ route: Route) {
+        guard !navigationPath.contains(route) else { return }
+        
+        navigationPath.append(route)
+    }
+    
+    func removeAllPath() {
+        navigationPath = []
+    }
 }

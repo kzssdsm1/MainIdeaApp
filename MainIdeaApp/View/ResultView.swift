@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResultView: View {
-    @StateObject var viewModel: ResultViewModel
+    @StateObject var viewModel = ResultViewModel()
     
     @State private var isShowingResultComponents = false
     
