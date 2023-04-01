@@ -52,4 +52,10 @@ extension Color {
     static let matureOrange = Color(hex: "542d00")
     
     static let offWhite = Color(hex: "f8f8f8")
+    
+    // チョークブルー
+    static let chalkBlue = Color(hex: "68A9CF")
+    
+    // チョークピンク
+    static let chalkPink = Color(hex: "f7abad")
 }
