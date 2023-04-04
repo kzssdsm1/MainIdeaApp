@@ -18,12 +18,13 @@
 		5463EF072942FD34008CDF00 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5463EF062942FD34008CDF00 /* Question.swift */; };
 		546C3E6B29D5ACC800674BC6 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C3E6A29D5ACC800674BC6 /* UIFont+Extension.swift */; };
 		5472C16F291E04E600E22D80 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472C16E291E04E600E22D80 /* DescriptionView.swift */; };
-		547F34C529D82189006D3E47 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F34C429D82189006D3E47 /* NavigationManager.swift */; };
+		5474D0BA29DC954E00E92227 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474D0B929DC954E00E92227 /* Router.swift */; };
+		5474D0BC29DC95EB00E92227 /* ViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474D0BB29DC95EB00E92227 /* ViewRoute.swift */; };
+		5474D0BE29DC9C4E00E92227 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474D0BD29DC9C4E00E92227 /* RoutingView.swift */; };
 		54817C3D2967D68B00C9EFBD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C3C2967D68B00C9EFBD /* String+Extension.swift */; };
 		54817C402967D6EE00C9EFBD /* RubyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */; };
 		54817C422967D7C200C9EFBD /* RubyLabelRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */; };
 		5493F17029A7347C00A4B61F /* QuestionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493F16F29A7347C00A4B61F /* QuestionContext.swift */; };
-		549D5BA529D889D0006C6837 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549D5BA429D889D0006C6837 /* Route.swift */; };
 		549D5BA729D88BBB006C6837 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549D5BA629D88BBB006C6837 /* QuestionManager.swift */; };
 		54BA7DA029C1A3DF00569D94 /* QuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA7D9F29C1A3DF00569D94 /* QuestionListView.swift */; };
 		54BA7DA229C1A42200569D94 /* QuestionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA7DA129C1A42200569D94 /* QuestionListViewModel.swift */; };
@@ -44,13 +45,14 @@
 		5463EF062942FD34008CDF00 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		546C3E6A29D5ACC800674BC6 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		5472C16E291E04E600E22D80 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
-		547F34C429D82189006D3E47 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		5474D0B929DC954E00E92227 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5474D0BB29DC95EB00E92227 /* ViewRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRoute.swift; sourceTree = "<group>"; };
+		5474D0BD29DC9C4E00E92227 /* RoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingView.swift; sourceTree = "<group>"; };
 		54817C3C2967D68B00C9EFBD /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		54817C3F2967D6EE00C9EFBD /* RubyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyLabel.swift; sourceTree = "<group>"; };
 		54817C412967D7C200C9EFBD /* RubyLabelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyLabelRepresentable.swift; sourceTree = "<group>"; };
 		5493F16F29A7347C00A4B61F /* QuestionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContext.swift; sourceTree = "<group>"; };
 		5498C103292F51DC00B11C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		549D5BA429D889D0006C6837 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		549D5BA629D88BBB006C6837 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 		54BA7D9F29C1A3DF00569D94 /* QuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListView.swift; sourceTree = "<group>"; };
 		54BA7DA129C1A42200569D94 /* QuestionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewModel.swift; sourceTree = "<group>"; };
@@ -144,8 +146,9 @@
 		547F34C629D823D9006D3E47 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				547F34C429D82189006D3E47 /* NavigationManager.swift */,
-				549D5BA429D889D0006C6837 /* Route.swift */,
+				5474D0B929DC954E00E92227 /* Router.swift */,
+				5474D0BB29DC95EB00E92227 /* ViewRoute.swift */,
+				5474D0BD29DC9C4E00E92227 /* RoutingView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -261,14 +264,15 @@
 				549D5BA729D88BBB006C6837 /* QuestionManager.swift in Sources */,
 				544CF36229D4A68200A4CB6F /* UserAnswerView.swift in Sources */,
 				546C3E6B29D5ACC800674BC6 /* UIFont+Extension.swift in Sources */,
-				547F34C529D82189006D3E47 /* NavigationManager.swift in Sources */,
+				5474D0BA29DC954E00E92227 /* Router.swift in Sources */,
 				5493F17029A7347C00A4B61F /* QuestionContext.swift in Sources */,
 				54BA7DA029C1A3DF00569D94 /* QuestionListView.swift in Sources */,
+				5474D0BE29DC9C4E00E92227 /* RoutingView.swift in Sources */,
 				54BA7DA429C1A72B00569D94 /* QuestionView.swift in Sources */,
 				54BA7DA229C1A42200569D94 /* QuestionListViewModel.swift in Sources */,
 				54817C402967D6EE00C9EFBD /* RubyLabel.swift in Sources */,
 				545B41FE291CD02400D6C773 /* MainIdeaAppApp.swift in Sources */,
-				549D5BA529D889D0006C6837 /* Route.swift in Sources */,
+				5474D0BC29DC95EB00E92227 /* ViewRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

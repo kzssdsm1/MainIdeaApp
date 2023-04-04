@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct QuestionListView: View {
-    @EnvironmentObject private var navManager: NavigationManager
+    @EnvironmentObject private var router: Router
     
     @StateObject private var viewModel = QuestionListViewModel()
     
@@ -128,7 +128,6 @@ struct QuestionListView: View {
     }
     
     private func navigationToResult() {
-        QuestionManager.shared.setterForProperties(questions: Array(viewModel.questions), userAnswers: viewModel.userAnswers)
-        navManager.navigationPath.append(.result)
+        router.setNavigationPath(.result(userAnswers: viewModel.userAnswers, questions: Array(viewModel.questions)))
     }
 }

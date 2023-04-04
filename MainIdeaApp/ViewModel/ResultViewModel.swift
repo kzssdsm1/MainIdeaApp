@@ -11,8 +11,16 @@ final class ResultViewModel: ObservableObject {
     @Published var displayedUserScore = 0
     @Published var isShowingResultImage = false
     
-    let userAnswers = QuestionManager.shared.accessorForUserAnswers()
-    let questions = QuestionManager.shared.accessorForQuestions()
+//    let userAnswers = QuestionManager.shared.accessorForUserAnswers()
+//    let questions = QuestionManager.shared.accessorForQuestions()
+    
+    let userAnswers: [String]
+    let questions: [Question]
+    
+    init(userAnswers: [String], questions: [Question]) {
+        self.userAnswers = userAnswers
+        self.questions = questions
+    }
     
     private var userScore: Int {
         var score = 0

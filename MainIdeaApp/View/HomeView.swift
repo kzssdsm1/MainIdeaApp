@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject private var navManager: NavigationManager
+    @EnvironmentObject private var router: Router
     
     private let screenWidth = CGFloat(UIScreen.main.bounds.width)
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     
     var body: some View {
-        NavigationStack(path: $navManager.navigationPath) {
+        RoutingView {
             VStack(spacing: 0) {
                 Spacer(minLength: 0)
                 
@@ -27,7 +27,7 @@ struct HomeView: View {
                 Spacer(minLength: 0)
                 
                 Button(action: {
-                    navManager.setNavigationPath(.questions)
+                    router.setNavigationPath(.questions)
                 }, label: {
                     Text("もんだいをとく")
                         .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
@@ -37,7 +37,7 @@ struct HomeView: View {
                 .padding(.bottom, screenHeight * 0.05)
                 
                 Button(action: {
-                    navManager.setNavigationPath(.description)
+                    router.setNavigationPath(.description)
                 }, label: {
                     Text("アプリのつかいかた")
                         .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
@@ -54,13 +54,6 @@ struct HomeView: View {
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.kokubanColor.edgesIgnoringSafeArea(.all))
-            .navigationDestination(for: Route.self) { route in
-                switch route {
-                case .questions: QuestionListView()
-                case .description: DescriptionView()
-                case .result: ResultView()
-                }
-            }
-        } // NavigationStack
+        }
     } // body
 }
