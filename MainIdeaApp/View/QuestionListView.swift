@@ -116,6 +116,23 @@ struct QuestionListView: View {
             } // VStack
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.kokubanColor.edgesIgnoringSafeArea(.all))
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        router.removeAll()
+                    }, label: {
+                        HStack {
+                            Image(systemName: "arrowshape.turn.up.left.fill")
+                                .foregroundColor(.blue)
+                            
+                            Text("タイトルへ")
+                                .fontWeight(.bold)
+                                .foregroundColor(.blue)
+                        } // HStack
+                    })
+                }
+            } // toolbar
         } // ScrolViewReader
     } // body
     

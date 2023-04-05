@@ -16,6 +16,10 @@ final class Router: ObservableObject {
         navigationPath.append(route)
     }
     
+    func removeAll() {
+        navigationPath = []
+    }
+    
     @ViewBuilder
     func buildView(route: ViewRoute) -> some View {
         switch route {

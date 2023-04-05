@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ResultView: View {
+    @EnvironmentObject private var router: Router
+    
     @StateObject var viewModel: ResultViewModel
     
     @State private var isShowingResultComponents = false
@@ -120,6 +122,23 @@ struct ResultView: View {
             } // ScrollView
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.kokubanColor.edgesIgnoringSafeArea(.all))
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        router.removeAll()
+                    }, label: {
+                        HStack {
+                            Image(systemName: "arrowshape.turn.up.left.fill")
+                                .foregroundColor(.blue)
+                            
+                            Text("タイトルへ")
+                                .fontWeight(.bold)
+                                .foregroundColor(.blue)
+                        } // HStack
+                    })
+                }
+            } // toolbar
         } // ScrollViewReader
     } // body
     
