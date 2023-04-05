@@ -120,7 +120,7 @@ struct QuestionListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
-                        router.removeAll()
+                        router.backToHome()
                     }, label: {
                         HStack {
                             Image(systemName: "arrowshape.turn.up.left.fill")

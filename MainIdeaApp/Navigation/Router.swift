@@ -16,7 +16,7 @@ final class Router: ObservableObject {
         navigationPath.append(route)
     }
     
-    func removeAll() {
+    func backToHome() {
         navigationPath = []
     }
     
