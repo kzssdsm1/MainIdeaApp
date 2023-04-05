@@ -27,7 +27,7 @@ struct HomeView: View {
                 Spacer(minLength: 0)
                 
                 Button(action: {
-                    router.setNavigationPath(.questions)
+                    router.navigationTo(.questions)
                 }, label: {
                     Text("もんだいをとく")
                         .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
@@ -37,7 +37,7 @@ struct HomeView: View {
                 .padding(.bottom, screenHeight * 0.05)
                 
                 Button(action: {
-                    router.setNavigationPath(.description)
+                    router.navigationTo(.description)
                 }, label: {
                     Text("アプリのつかいかた")
                         .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))

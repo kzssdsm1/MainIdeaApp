@@ -10,18 +10,14 @@ import SwiftUI
 final class Router: ObservableObject {
     @Published var navigationPath = [ViewRoute]()
     
-    func setNavigationPath(_ route: ViewRoute) {
+    func navigationTo(_ route: ViewRoute) {
         guard !navigationPath.contains(route) else { return }
         
         navigationPath.append(route)
     }
     
-    func view(route: ViewRoute) -> AnyView {
-        AnyView(buildView(route: route))
-    }
-    
     @ViewBuilder
-    private func buildView(route: ViewRoute) -> some View {
+    func buildView(route: ViewRoute) -> some View {
         switch route {
         case .questions:
             QuestionListView()

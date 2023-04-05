@@ -20,7 +20,7 @@ struct RoutingView<Content>: View where Content: View {
         NavigationStack(path: $router.navigationPath) {
             content
                 .navigationDestination(for: ViewRoute.self) { route in
-                    router.view(route: route)
+                    router.buildView(route: route)
                 }
         }
     }

@@ -128,6 +128,6 @@ struct QuestionListView: View {
     }
     
     private func navigationToResult() {
-        router.setNavigationPath(.result(userAnswers: viewModel.userAnswers, questions: Array(viewModel.questions)))
+        router.navigationTo(.result(userAnswers: viewModel.userAnswers, questions: Array(viewModel.questions)))
     }
 }
