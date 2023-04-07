@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct QuestionListView: View {
-    @StateObject private var viewModel = QuestionListViewModel()
+    @EnvironmentObject private var router: Router
     
-    @State private var isPresentedResultView = false
+    @StateObject private var viewModel = QuestionListViewModel()
     
     private let screenWidth = CGFloat(UIScreen.main.bounds.width)
     
@@ -91,7 +91,7 @@ struct QuestionListView: View {
                         Spacer()
                         
                         Button(action: {
-                            isPresentedResultView = true
+                            navigationToResult()
                         }, label: {
                             Rectangle()
                                 .cornerRadius(20)
@@ -107,9 +107,6 @@ struct QuestionListView: View {
                                     .opacity(0.8)
                                 )
                         })
-                        .navigationDestination(isPresented: $isPresentedResultView) {
-                            ResultView(viewModel: ResultViewModel(userAnswers: viewModel.userAnswers, questions: Array(viewModel.questions))) 
-                        }
                         .disabled(viewModel.userAnswers.count < 5)
                         .opacity(viewModel.userAnswers.count < 5 ? 0.5 : 1)
                         
@@ -119,6 +116,23 @@ struct QuestionListView: View {
             } // VStack
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.kokubanColor.edgesIgnoringSafeArea(.all))
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        router.backToHome()
+                    }, label: {
+                        HStack {
+                            Image(systemName: "arrowshape.turn.up.left.fill")
+                                .foregroundColor(.blue)
+                            
+                            Text("タイトルへ")
+                                .fontWeight(.bold)
+                                .foregroundColor(.blue)
+                        } // HStack
+                    })
+                }
+            } // toolbar
         } // ScrolViewReader
     } // body
     
@@ -128,5 +142,9 @@ struct QuestionListView: View {
     
     private func nextButtonText(for index: Int) -> String {
         return index == viewModel.questions.count - 1 ? "｜最初《さいしょ》の｜問題《もんだい》へ" : "｜次《つぎ》の｜問題《もんだい》へ"
+    }
+    
+    private func navigationToResult() {
+        router.navigationTo(.result(userAnswers: viewModel.userAnswers, questions: Array(viewModel.questions)))
     }
 }
