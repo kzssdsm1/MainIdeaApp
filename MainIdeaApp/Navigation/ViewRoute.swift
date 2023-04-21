@@ -11,6 +11,7 @@ enum ViewRoute: Equatable, Hashable {
     case questions
     case result(userAnswers: [String], questions: [Question])
     case description
+    case exampleResult(userAnswer: String, question: Question)
 }
 
 extension ViewRoute: Identifiable {

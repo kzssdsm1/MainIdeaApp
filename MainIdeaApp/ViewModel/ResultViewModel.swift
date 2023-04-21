@@ -11,9 +11,6 @@ final class ResultViewModel: ObservableObject {
     @Published var displayedUserScore = 0
     @Published var isShowingResultImage = false
     
-//    let userAnswers = QuestionManager.shared.accessorForUserAnswers()
-//    let questions = QuestionManager.shared.accessorForQuestions()
-    
     let userAnswers: [String]
     let questions: [Question]
     

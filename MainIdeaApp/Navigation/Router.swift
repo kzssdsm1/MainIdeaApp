@@ -29,6 +29,8 @@ final class Router: ObservableObject {
             ResultView(viewModel: ResultViewModel(userAnswers: userAnswers, questions: questions))
         case .description:
             DescriptionView()
+        case .exampleResult(let userAnswer, let question):
+            ExampleResultView(viewModel: ExampleResultViewModel(userAnswer: userAnswer, question: question))
         }
     }
 }
