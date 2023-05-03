@@ -10,5 +10,5 @@ import Foundation
 final class DescriptionViewModel: ObservableObject {
     @Published var userAnswer = ""
     
-    let question = QuestionContext.questions.randomElement()
+    let question = QuestionContext.questions.first
 }

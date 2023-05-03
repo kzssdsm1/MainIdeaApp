@@ -15,4 +15,12 @@ final class ExampleResultViewModel: ObservableObject {
         self.userAnswer = userAnswer
         self.question = question
     }
+    
+    func getImageNameForScore() -> String {
+        if question.correctAnswer == userAnswer {
+            return "成績三段階１"
+        } else {
+            return "成績三段階３"
+        }
+    }
 }
