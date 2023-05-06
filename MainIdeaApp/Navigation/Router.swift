@@ -20,6 +20,10 @@ final class Router: ObservableObject {
         navigationPath = []
     }
     
+    func backToPrevious() {
+        navigationPath.removeLast()
+    }
+    
     @ViewBuilder
     func buildView(route: ViewRoute) -> some View {
         switch route {
@@ -29,6 +33,8 @@ final class Router: ObservableObject {
             ResultView(viewModel: ResultViewModel(userAnswers: userAnswers, questions: questions))
         case .description:
             DescriptionView()
+        case .exampleResult(let userAnswer, let question):
+            ExampleResultView(viewModel: ExampleResultViewModel(userAnswer: userAnswer, question: question))
         }
     }
 }

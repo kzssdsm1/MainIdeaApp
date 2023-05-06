@@ -12,16 +12,17 @@ struct HomeView: View {
     
     private let screenWidth = CGFloat(UIScreen.main.bounds.width)
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
+    private let homeImageName = QuestionContext.questions.randomElement()!.imageName
     
     var body: some View {
         RoutingView {
             VStack(spacing: 0) {
                 Spacer(minLength: 0)
                 
-                Image(systemName: "questionmark.circle.fill")
+                Image(homeImageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: screenWidth * 0.4, height: screenWidth * 0.4)
+                    .frame(width: screenWidth * 0.5, height: screenHeight * 0.5)
                     .foregroundColor(.lightGray)
                 
                 Spacer(minLength: 0)
