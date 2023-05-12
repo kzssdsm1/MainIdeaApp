@@ -14,12 +14,20 @@ struct QuestionView: View {
     
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     
+    private var fontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 40
+        } else {
+            return 25
+        }
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             Image(viewModel.questions[viewId].imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: screenHeight * 0.35)
+                .frame(height: screenHeight * 0.40)
                 .padding()
             
             ForEach(viewModel.questions[viewId].choices, id: \.self) { item in
@@ -29,7 +37,7 @@ struct QuestionView: View {
                     if viewModel.userAnswers.contains(item) {
                         RubyLabelRepresentable(
                             attributedText: item.createRuby(color: UIColor(.yellow)),
-                            font: UIFont(name: "Tanuki-Permanent-Marker", size: 25)!,
+                            font: UIFont(name: "Tanuki-Permanent-Marker", size: fontSize)!,
                             textColor: UIColor(.yellow),
                             textAlignment: .left
                         )
@@ -38,14 +46,14 @@ struct QuestionView: View {
                     } else {
                         RubyLabelRepresentable(
                             attributedText: item.createRuby(color: UIColor(.white)),
-                            font: UIFont(name: "Tanuki-Permanent-Marker", size: 25)!,
+                            font: UIFont(name: "Tanuki-Permanent-Marker", size: fontSize)!,
                             textColor: UIColor(.offWhite),
                             textAlignment: .left
                         )
                         .opacity(0.8)
                     }
                 })
-                .padding(10)
+                .padding(.top)
             } // ForEach
         } // VStack
     } // body

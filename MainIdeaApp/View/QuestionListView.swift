@@ -62,8 +62,6 @@ struct QuestionListView: View {
                                         } // withAnimation
                                     }
                                 }, label: {
-//                                    scrollButtonLabel(nextButtonText(for: index), width: index == viewModel.questions.count - 1 ? 200 : 160, height: 80)
-                                    
                                     Image("wood_kanban5")
                                         .resizable()
                                         .frame(width: 160, height: 80)
@@ -154,10 +152,6 @@ struct QuestionListView: View {
     private func nextButtonText(for index: Int) -> String {
         return index == viewModel.questions.count - 1 ? "｜最初《さいしょ》の｜問題《もんだい》へ" : "｜次《つぎ》の｜問題《もんだい》へ"
     }
-    
-//    private func nextButtonText(for index: Int) -> String {
-//        return index == viewModel.questions.count - 1 ? "｜答《こた》え｜合《あ》わせをする" : "｜次《つぎ》の｜問題《もんだい》へ"
-//    }
     
     private func rubyLabel(_ text: String, fontSize: CGFloat, textColor: UIColor = UIColor(.offWhite), textAlignment: NSTextAlignment = .center, opacity: Double = 0.8) -> some View {
         RubyLabelRepresentable(

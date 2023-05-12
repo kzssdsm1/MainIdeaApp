@@ -21,6 +21,13 @@ struct UserAnswerView: View {
     private var resultLabelColor: Color {
         return viewModel.userAnswers[viewId] == viewModel.questions[viewId].correctAnswer ? .chalkBlue : .chalkPink
     }
+    private var fontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 40
+        } else {
+            return 25
+        }
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -32,7 +39,7 @@ struct UserAnswerView: View {
             
             rubyLabel("｜正解《せいかい》：", fontSize: 22, textColor: UIColor(.chalkBlue), bottomPadding: 10)
             
-            rubyLabel(viewModel.questions[viewId].correctAnswer, fontSize: 25, textColor: UIColor(.chalkBlue), bottomPadding: 20)
+            rubyLabel(viewModel.questions[viewId].correctAnswer, fontSize: fontSize, textColor: UIColor(.chalkBlue), bottomPadding: 20)
             
             rubyLabel(resultLabelText, fontSize: 27, textColor: UIColor(resultLabelColor), textAlignment: .center, bottomPadding: 5)
         } // VStack
