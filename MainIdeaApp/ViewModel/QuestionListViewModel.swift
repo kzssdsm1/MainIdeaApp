@@ -9,6 +9,8 @@ import Foundation
 
 final class QuestionListViewModel: ObservableObject {
     @Published var userAnswers = [String]()
+    @Published var isNavigationDisabled = true
+    
     let questions = QuestionContext.questions.shuffled().prefix(5)
     
     private var unsortedUserAnswers = [Int: String]()
@@ -20,6 +22,12 @@ final class QuestionListViewModel: ObservableObject {
         
         for item in unsortedUserAnswers.sorted(by: { $0.key < $1.key }) {
             userAnswers.append(item.value)
+        }
+        
+        if userAnswers.count < 5 {
+            isNavigationDisabled = true
+        } else {
+            isNavigationDisabled = false
         }
     }
 }

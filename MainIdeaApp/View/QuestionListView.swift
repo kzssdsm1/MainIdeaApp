@@ -9,22 +9,22 @@ import SwiftUI
 
 struct QuestionListView: View {
     @EnvironmentObject private var router: Router
-    
+
     @StateObject private var viewModel = QuestionListViewModel()
-    
+
     private let screenWidth = CGFloat(UIScreen.main.bounds.width)
-    
+
     var body: some View {
         ScrollViewReader { scrollProxy in
             VStack(spacing: 0) {
                 ScrollView(.vertical, showsIndicators: false) {
                     ForEach(0..<viewModel.questions.count, id: \.self) { index in
                         VStack {
-                            QuestionView(viewModel: viewModel, viewId: index)
-                            
+                            QuestionView(viewModel: viewModel, viewId: index, proxy: scrollProxy)
+
                             HStack {
                                 Spacer()
-                                
+
                                 Button(action: {
                                     if index == 0 {
                                         withAnimation {
@@ -50,7 +50,7 @@ struct QuestionListView: View {
                                         )
                                 })
                                 .padding()
-                                
+
                                 Button(action: {
                                     if index == viewModel.questions.count - 1 {
                                         withAnimation {
@@ -77,7 +77,7 @@ struct QuestionListView: View {
                                 })
                                 .opacity(index != 0 ? 1 : 0)
                                 .padding()
-                                
+
                                 Spacer()
                             } // HStack
                             Divider()
@@ -86,10 +86,10 @@ struct QuestionListView: View {
                         } // VStack
                         .id(index)
                     } // ForEach
-                    
+
                     HStack {
                         Spacer()
-                        
+
                         Button(action: {
                             navigationToResult()
                         }, label: {
@@ -107,9 +107,10 @@ struct QuestionListView: View {
                                     .opacity(0.8)
                                 )
                         })
+                        .id(5)
                         .disabled(viewModel.userAnswers.count < 5)
                         .opacity(viewModel.userAnswers.count < 5 ? 0.5 : 1)
-                        
+
                         Spacer()
                     } // HStack
                 } //ScrollView
@@ -125,7 +126,7 @@ struct QuestionListView: View {
                         HStack {
                             Image(systemName: "arrowshape.turn.up.left.fill")
                                 .foregroundColor(.blue)
-                            
+
                             Text("タイトルへ")
                                 .fontWeight(.bold)
                                 .foregroundColor(.blue)
@@ -135,7 +136,7 @@ struct QuestionListView: View {
             } // toolbar
         } // ScrolViewReader
     } // body
-    
+
     private func scrollButtonLabel(_ text: String, fontSize: CGFloat = 20, width: CGFloat, height: CGFloat) -> some View {
         Image("wood_kanban5")
             .resizable()
@@ -144,15 +145,15 @@ struct QuestionListView: View {
                 rubyLabel(text, fontSize: fontSize)
             )
     }
-    
+
     private func previousButtonText(for index: Int) -> String {
         return index == 0 ? "｜次《つぎ》の｜問題《もんだい》へ" : "｜一《ひと》つ｜前《まえ》の｜問題《もんだい》へ"
     }
-    
+
     private func nextButtonText(for index: Int) -> String {
         return index == viewModel.questions.count - 1 ? "｜最初《さいしょ》の｜問題《もんだい》へ" : "｜次《つぎ》の｜問題《もんだい》へ"
     }
-    
+
     private func rubyLabel(_ text: String, fontSize: CGFloat, textColor: UIColor = UIColor(.offWhite), textAlignment: NSTextAlignment = .center, opacity: Double = 0.8) -> some View {
         RubyLabelRepresentable(
             attributedText: text.createRuby(color: textColor),
@@ -162,7 +163,7 @@ struct QuestionListView: View {
         )
         .opacity(opacity)
     }
-    
+
     private func navigationToResult() {
         router.navigationTo(.result(userAnswers: viewModel.userAnswers, questions: Array(viewModel.questions)))
     }
