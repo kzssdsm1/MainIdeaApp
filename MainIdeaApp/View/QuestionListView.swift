@@ -36,18 +36,7 @@ struct QuestionListView: View {
                                         } // withAnimation
                                     }
                                 }, label: {
-                                    Image("wood_kanban5")
-                                        .resizable()
-                                        .frame(width: 180, height: 80)
-                                        .overlay(
-                                            RubyLabelRepresentable(
-                                                attributedText: previousButtonText(for: index).createRuby(color: UIColor(.offWhite)),
-                                                font: UIFont(name: "Tanuki-Permanent-Marker", size: 20)!,
-                                                textColor: UIColor(.offWhite),
-                                                textAlignment: .center
-                                            )
-                                            .opacity(0.8)
-                                        )
+                                    WoodSignboardView(viewWidth: 180, viewHeight: 80, fontSize: 20, labelText: previousButtonText(for: index))
                                 })
                                 .padding()
 
@@ -62,18 +51,7 @@ struct QuestionListView: View {
                                         } // withAnimation
                                     }
                                 }, label: {
-                                    Image("wood_kanban5")
-                                        .resizable()
-                                        .frame(width: 160, height: 80)
-                                        .overlay(
-                                            RubyLabelRepresentable(
-                                                attributedText: nextButtonText(for: index).createRuby(color: UIColor(.offWhite)),
-                                                font: UIFont(name: "Tanuki-Permanent-Marker", size: 20)!,
-                                                textColor: UIColor(.offWhite),
-                                                textAlignment: .center
-                                            )
-                                            .opacity(0.8)
-                                        )
+                                    WoodSignboardView(viewWidth: 160, viewHeight: 80, fontSize: 20, labelText: nextButtonText(for: index))
                                 })
                                 .opacity(index != 0 ? 1 : 0)
                                 .padding()
