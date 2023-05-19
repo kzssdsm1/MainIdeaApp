@@ -10,9 +10,22 @@ import SwiftUI
 struct WoodSignboardView: View {
     
     let viewWidth: CGFloat
-    let viewHeight: CGFloat
-    let fontSize: CGFloat
     let labelText: String
+    
+    private var viewHeight: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 120
+        } else {
+            return 80
+        }
+    }
+    private var labelFontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 30
+        } else {
+            return 20
+        }
+    }
     
     var body: some View {
         Image("wood_kanban5")
@@ -21,7 +34,7 @@ struct WoodSignboardView: View {
             .overlay(
                 RubyLabelRepresentable(
                     attributedText: labelText.createRuby(color: UIColor(.offWhite)),
-                    font: .chalkFont(ofSize: fontSize),
+                    font: .chalkFont(ofSize: labelFontSize),
                     textColor: UIColor(.offWhite),
                     textAlignment: .center
                 )

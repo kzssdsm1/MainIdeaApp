@@ -14,20 +14,6 @@ struct QuestionListView: View {
 
     private let screenWidth = CGFloat(UIScreen.main.bounds.width)
     
-    private var signboardFontSize: CGFloat {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            return 30
-        } else {
-            return 20
-        }
-    }
-    private var signboardHeight: CGFloat {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            return 120
-        } else {
-            return 80
-        }
-    }
     private var leftSignboardWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
             return 280
@@ -40,6 +26,20 @@ struct QuestionListView: View {
             return 250
         } else {
             return 160
+        }
+    }
+    private var navButtonFontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 30
+        } else {
+            return 20
+        }
+    }
+    private var navButtonHeight: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 120
+        } else {
+            return 80
         }
     }
 
@@ -67,8 +67,6 @@ struct QuestionListView: View {
                                 }, label: {
                                     WoodSignboardView(
                                         viewWidth: index == 0 ? rightSignboardWidth : leftSignboardWidth,
-                                        viewHeight: signboardHeight,
-                                        fontSize: signboardFontSize,
                                         labelText: previousButtonText(for: index)
                                     )
                                 })
@@ -87,8 +85,6 @@ struct QuestionListView: View {
                                 }, label: {
                                     WoodSignboardView(
                                         viewWidth: rightSignboardWidth,
-                                        viewHeight: signboardHeight,
-                                        fontSize: signboardFontSize,
                                         labelText: nextButtonText(for: index)
                                     )
                                 })
@@ -113,9 +109,9 @@ struct QuestionListView: View {
                             Rectangle()
                                 .cornerRadius(20)
                                 .foregroundColor(.matureOrange)
-                                .frame(width: leftSignboardWidth, height: signboardHeight)
+                                .frame(width: leftSignboardWidth, height: navButtonHeight)
                                 .overlay(
-                                    rubyLabel("｜答《こた》え｜合《あ》わせをする", fontSize: signboardFontSize)
+                                    rubyLabel("｜答《こた》え｜合《あ》わせをする", fontSize: navButtonFontSize)
                                 )
                         })
                         .id(5)

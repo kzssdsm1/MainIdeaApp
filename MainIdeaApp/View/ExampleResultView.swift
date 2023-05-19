@@ -17,30 +17,57 @@ struct ExampleResultView: View {
     private var resultLabelText: String {
         return viewModel.question.correctAnswer == viewModel.userAnswer ? "｜正解《せいかい》！" : "｜不正解《ふせいかい》・・・"
     }
-    
     private var resultLabelColor: UIColor {
         return viewModel.question.correctAnswer == viewModel.userAnswer ? UIColor(.chalkBlue) : UIColor(.chalkPink)
+    }
+    private var textFontWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 42
+        } else {
+            return 25
+        }
+    }
+    private var scoreFontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 50
+        } else {
+            return 30
+        }
+    }
+    private var answerfontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 45
+        } else {
+            return 25
+        }
+    }
+    private var answerSectionfontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 38
+        } else {
+            return 22
+        }
     }
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 0) {
-                rubyLabel(resultLabelText, fontSize: 30, textColor: resultLabelColor, bottomPadding: 10)
+                rubyLabel(resultLabelText, fontSize: scoreFontSize, textColor: resultLabelColor, bottomPadding: 10)
                     .padding(.top, 20)
                 
                 resultImage()
                 
-                rubyLabel("｜君《きみ》の｜回答《かいとう》：", fontSize: 22, bottomPadding: 10)
+                rubyLabel("｜君《きみ》の｜回答《かいとう》：", fontSize: answerSectionfontSize, bottomPadding: 10)
                 
-                rubyLabel(viewModel.userAnswer, fontSize: 25, bottomPadding: 30)
+                rubyLabel(viewModel.userAnswer, fontSize: answerfontSize, bottomPadding: 30)
                 
-                rubyLabel("｜正解《せいかい》：", fontSize: 22, textColor: UIColor(.chalkBlue), bottomPadding: 10)
+                rubyLabel("｜正解《せいかい》：", fontSize: answerSectionfontSize, textColor: UIColor(.chalkBlue), bottomPadding: 10)
                 
-                rubyLabel(viewModel.question.correctAnswer, fontSize: 25, textColor: UIColor(.chalkBlue), bottomPadding: 40)
+                rubyLabel(viewModel.question.correctAnswer, fontSize: answerfontSize, textColor: UIColor(.chalkBlue), bottomPadding: 40)
                 
-                rubyLabel("｜以上《いじょう》のような｜問題《もんだい》が｜合計《ごうけい》｜五問《ごもん》｜出題《しゅつだい》されます。", fontSize: 25, bottomPadding: 15)
+                rubyLabel("｜以上《いじょう》のような｜問題《もんだい》が｜合計《ごうけい》｜五問《ごもん》｜出題《しゅつだい》されます。", fontSize: textFontWidth, bottomPadding: 15)
                 
-                rubyLabel("｜全問《ぜんもん》｜正解《せいかい》を｜目指《めざ》して｜頑張《がんば》りましょう！", fontSize: 25, bottomPadding: 30)
+                rubyLabel("｜全問《ぜんもん》｜正解《せいかい》を｜目指《めざ》して｜頑張《がんば》りましょう！", fontSize: textFontWidth, bottomPadding: 30)
             } // VStack
         } // ScrollView
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -83,7 +110,7 @@ struct ExampleResultView: View {
         Image(viewModel.getImageNameForScore())
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: screenHeight * 0.35)
+            .frame(height: screenHeight * 0.4)
             .padding(.horizontal)
             .padding(.top, 15)
             .padding(.bottom, 30)

@@ -18,13 +18,49 @@ struct ResultView: View {
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     private let textColor = UIColor(.offWhite)
     
+    private var scoreMessageSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 45
+        } else {
+            return 28
+        }
+    }
+    private var scoreFontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 50
+        } else {
+            return 30
+        }
+    }
+    private var checkAnswersButtonWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 320
+        } else {
+            return 200
+        }
+    }
+    private var leftSignboardWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 280
+        } else {
+            return 180
+        }
+    }
+    private var rightSignboardWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 250
+        } else {
+            return 160
+        }
+    }
+    
     var body: some View {
         ScrollViewReader { scrollProxy in
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
                     Spacer(minLength: 30)
                     
-                    rubyLabel(viewModel.getTextForResult(), fontSize: 28, opacity: isShowingResultComponents ? 0.8 : 0)
+                    rubyLabel(viewModel.getTextForResult(), fontSize: scoreMessageSize, opacity: isShowingResultComponents ? 0.8 : 0)
                         .padding()
                     
                     if viewModel.isShowingResultImage {
@@ -46,12 +82,12 @@ struct ResultView: View {
                             .padding()
                     }
                     
-                    rubyLabel("｜君《きみ》の｜得点《とくてん》", fontSize: 27)
+                    rubyLabel("｜君《きみ》の｜得点《とくてん》", fontSize: scoreMessageSize)
                         .padding()
                     
                     Text("\(viewModel.displayedUserScore)点")
                         .foregroundColor(.offWhite)
-                        .font(.custom("Tanuki-Permanent-Marker", size: 30))
+                        .font(.custom("Tanuki-Permanent-Marker", size: scoreFontSize))
                         .opacity(0.8)
                         .padding()
                         .onAppear {
@@ -65,7 +101,7 @@ struct ResultView: View {
                             scrollProxy.scrollTo(0)
                         } // withAnimation
                     }, label: {
-                        scrollButtonLabel("｜答《こた》え｜合《あ》わせをする", width: 200, height: 80)
+                        WoodSignboardView(viewWidth: checkAnswersButtonWidth, labelText: "｜答《こた》え｜合《あ》わせをする")
                     })
                     .opacity(isShowingResultComponents ? 1 : 0.6)
                     .disabled(!isShowingResultComponents)
@@ -92,7 +128,7 @@ struct ResultView: View {
                                             scrollProxy.scrollTo(targetIndex)
                                         } // withAnimation
                                     }, label: {
-                                        scrollButtonLabel(previousButtonText(for: index), width: 180, height: 80)
+                                        WoodSignboardView(viewWidth: leftSignboardWidth, labelText: previousButtonText(for: index))
                                     })
                                     .padding()
                                     
@@ -103,7 +139,7 @@ struct ResultView: View {
                                             scrollProxy.scrollTo(targetIndex)
                                         } // withAnimation
                                     }, label: {
-                                        scrollButtonLabel(nextButtonText(for: index), width: 160, height: 80)
+                                        WoodSignboardView(viewWidth: rightSignboardWidth, labelText: nextButtonText(for: index))
                                     })
                                     .opacity(index != 0 ? 1 : 0)
                                     .padding()

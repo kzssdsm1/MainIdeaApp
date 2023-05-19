@@ -21,11 +21,25 @@ struct UserAnswerView: View {
     private var resultLabelColor: Color {
         return viewModel.userAnswers[viewId] == viewModel.questions[viewId].correctAnswer ? .chalkBlue : .chalkPink
     }
-    private var fontSize: CGFloat {
+    private var answerfontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
-            return 40
+            return 45
         } else {
             return 25
+        }
+    }
+    private var answerSectionfontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 38
+        } else {
+            return 22
+        }
+    }
+    private var answerCorrectnessfontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 52
+        } else {
+            return 27
         }
     }
     
@@ -33,15 +47,15 @@ struct UserAnswerView: View {
         VStack(spacing: 0) {
             resultImage()
             
-            rubyLabel("｜君《きみ》の｜回答《かいとう》：", fontSize: 22, textColor: answerTextColor, bottomPadding: 10)
+            rubyLabel("｜君《きみ》の｜回答《かいとう》：", fontSize: answerSectionfontSize, textColor: answerTextColor, bottomPadding: 10)
             
-            rubyLabel(viewModel.userAnswers[viewId], fontSize: 25, textColor: answerTextColor, bottomPadding: 30)
+            rubyLabel(viewModel.userAnswers[viewId], fontSize: answerfontSize, textColor: answerTextColor, bottomPadding: 30)
             
-            rubyLabel("｜正解《せいかい》：", fontSize: 22, textColor: UIColor(.chalkBlue), bottomPadding: 10)
+            rubyLabel("｜正解《せいかい》：", fontSize: answerSectionfontSize, textColor: UIColor(.chalkBlue), bottomPadding: 10)
             
-            rubyLabel(viewModel.questions[viewId].correctAnswer, fontSize: fontSize, textColor: UIColor(.chalkBlue), bottomPadding: 20)
+            rubyLabel(viewModel.questions[viewId].correctAnswer, fontSize: answerfontSize, textColor: UIColor(.chalkBlue), bottomPadding: 20)
             
-            rubyLabel(resultLabelText, fontSize: 27, textColor: UIColor(resultLabelColor), textAlignment: .center, bottomPadding: 5)
+            rubyLabel(resultLabelText, fontSize: answerCorrectnessfontSize, textColor: UIColor(resultLabelColor), textAlignment: .center, bottomPadding: 5)
         } // VStack
     } // body
     

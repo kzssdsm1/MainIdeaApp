@@ -14,10 +14,30 @@ struct HomeView: View {
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     private let homeImageName = QuestionContext.questions.randomElement()!.imageName
     
+    private var textFontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 50
+        } else {
+            return 30
+        }
+    }
+    private var titleFontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 60
+        } else {
+            return 30
+        }
+    }
+    
     var body: some View {
         RoutingView {
             VStack(spacing: 0) {
-                Spacer(minLength: 0)
+                Spacer(minLength: 100)
+                
+                Text("メインアイデアアプリ")
+                    .font(.custom("Tanuki-Permanent-Marker", size: titleFontSize))
+                    .foregroundColor(.lightGray)
+                    .opacity(0.8)
                 
                 Image(homeImageName)
                     .resizable()
@@ -25,13 +45,13 @@ struct HomeView: View {
                     .frame(width: screenWidth * 0.5, height: screenHeight * 0.5)
                     .foregroundColor(.lightGray)
                 
-                Spacer(minLength: 0)
+                Spacer(minLength: 20)
                 
                 Button(action: {
                     router.navigationTo(.questions)
                 }, label: {
                     Text("もんだいをとく")
-                        .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
+                        .font(.custom("Tanuki-Permanent-Marker", size: textFontSize))
                         .foregroundColor(.lightGray)
                         .opacity(0.8)
                 })
@@ -41,7 +61,7 @@ struct HomeView: View {
                     router.navigationTo(.description)
                 }, label: {
                     Text("アプリのつかいかた")
-                        .font(.custom("Tanuki-Permanent-Marker", size: screenWidth * 0.1))
+                        .font(.custom("Tanuki-Permanent-Marker", size: textFontSize))
                         .foregroundColor(.lightGray)
                         .opacity(0.8)
                 })
@@ -50,11 +70,11 @@ struct HomeView: View {
                 
                 Spacer(minLength: 0)
                 
-                Spacer(minLength: 0)
+                Spacer(minLength: 120)
             } // VStack
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.kokubanColor.edgesIgnoringSafeArea(.all))
-        }
+        } // RoutingView
     } // body
 }
