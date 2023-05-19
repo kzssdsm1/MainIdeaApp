@@ -13,6 +13,35 @@ struct QuestionListView: View {
     @StateObject private var viewModel = QuestionListViewModel()
 
     private let screenWidth = CGFloat(UIScreen.main.bounds.width)
+    
+    private var signboardFontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 30
+        } else {
+            return 20
+        }
+    }
+    private var signboardHeight: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 120
+        } else {
+            return 80
+        }
+    }
+    private var leftSignboardWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 280
+        } else {
+            return 180
+        }
+    }
+    private var rightSignboardWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 250
+        } else {
+            return 160
+        }
+    }
 
     var body: some View {
         ScrollViewReader { scrollProxy in
@@ -36,7 +65,12 @@ struct QuestionListView: View {
                                         } // withAnimation
                                     }
                                 }, label: {
-                                    WoodSignboardView(viewWidth: 180, viewHeight: 80, fontSize: 20, labelText: previousButtonText(for: index))
+                                    WoodSignboardView(
+                                        viewWidth: index == 0 ? rightSignboardWidth : leftSignboardWidth,
+                                        viewHeight: signboardHeight,
+                                        fontSize: signboardFontSize,
+                                        labelText: previousButtonText(for: index)
+                                    )
                                 })
                                 .padding()
 
@@ -51,7 +85,12 @@ struct QuestionListView: View {
                                         } // withAnimation
                                     }
                                 }, label: {
-                                    WoodSignboardView(viewWidth: 160, viewHeight: 80, fontSize: 20, labelText: nextButtonText(for: index))
+                                    WoodSignboardView(
+                                        viewWidth: rightSignboardWidth,
+                                        viewHeight: signboardHeight,
+                                        fontSize: signboardFontSize,
+                                        labelText: nextButtonText(for: index)
+                                    )
                                 })
                                 .opacity(index != 0 ? 1 : 0)
                                 .padding()
@@ -74,20 +113,15 @@ struct QuestionListView: View {
                             Rectangle()
                                 .cornerRadius(20)
                                 .foregroundColor(.matureOrange)
-                                .frame(width: 200, height: 90)
+                                .frame(width: leftSignboardWidth, height: signboardHeight)
                                 .overlay(
-                                    RubyLabelRepresentable(
-                                        attributedText: "｜答《こた》え｜合《あ》わせをする".createRuby(color: UIColor(.offWhite)),
-                                        font: UIFont(name: "Tanuki-Permanent-Marker", size: 20)!,
-                                        textColor: UIColor(.offWhite),
-                                        textAlignment: .center
-                                    )
-                                    .opacity(0.8)
+                                    rubyLabel("｜答《こた》え｜合《あ》わせをする", fontSize: signboardFontSize)
                                 )
                         })
                         .id(5)
                         .disabled(viewModel.userAnswers.count < 5)
                         .opacity(viewModel.userAnswers.count < 5 ? 0.5 : 1)
+                        .padding(.vertical)
 
                         Spacer()
                     } // HStack
