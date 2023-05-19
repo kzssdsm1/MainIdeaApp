@@ -149,15 +149,6 @@ struct QuestionListView: View {
         } // ScrolViewReader
     } // body
 
-    private func scrollButtonLabel(_ text: String, fontSize: CGFloat = 20, width: CGFloat, height: CGFloat) -> some View {
-        Image("wood_kanban5")
-            .resizable()
-            .frame(width: width, height: height)
-            .overlay(
-                rubyLabel(text, fontSize: fontSize)
-            )
-    }
-
     private func previousButtonText(for index: Int) -> String {
         return index == 0 ? "｜次《つぎ》の｜問題《もんだい》へ" : "｜一《ひと》つ｜前《まえ》の｜問題《もんだい》へ"
     }
