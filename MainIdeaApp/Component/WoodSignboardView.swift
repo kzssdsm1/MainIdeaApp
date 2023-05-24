@@ -14,16 +14,28 @@ struct WoodSignboardView: View {
     
     private var viewHeight: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 120
         } else {
-            return 80
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 80
+            default:
+                return 60
+            }
         }
     }
     private var labelFontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 30
         } else {
-            return 20
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 20
+            default:
+                return 15
+            }
         }
     }
     

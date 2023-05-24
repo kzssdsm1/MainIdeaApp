@@ -17,9 +17,15 @@ struct QuestionView: View {
     
     private var rubyFontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 40
         } else {
-            return 25
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 25
+            default:
+                return 20
+            }
         }
     }
     

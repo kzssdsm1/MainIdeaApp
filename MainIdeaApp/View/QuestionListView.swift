@@ -16,23 +16,41 @@ struct QuestionListView: View {
     
     private var leftSignboardWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 280
         } else {
-            return 180
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 180
+            default:
+                return 150
+            }
         }
     }
     private var rightSignboardWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 250
         } else {
-            return 160
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 160
+            default:
+                return 140
+            }
         }
     }
     private var navButtonFontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 30
         } else {
-            return 20
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 20
+            default:
+                return 15
+            }
         }
     }
     private var navButtonHeight: CGFloat {

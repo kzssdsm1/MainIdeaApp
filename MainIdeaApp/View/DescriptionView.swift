@@ -14,18 +14,30 @@ struct DescriptionView: View {
     
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     
-    private var textFontWidth: CGFloat {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            return 42
-        } else {
-            return 25
-        }
-    }
     private var navButtonWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 320
         } else {
-            return 200
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 200
+            default:
+                return 180
+            }
+        }
+    }
+    private var textFontWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 42
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 25
+            default:
+                return 22
+            }
         }
     }
     
@@ -77,7 +89,6 @@ struct DescriptionView: View {
                     navigationToExampleResult()
                 }, label: {
                     WoodSignboardView(viewWidth: navButtonWidth, labelText: "｜答《こた》え｜合《あ》わせをする")
-                    //navigationButtonLabel("｜答《こた》え｜合《あ》わせをする", width: 200, height: 80)
                 })
                 .opacity(!viewModel.userAnswer.isEmpty ? 1 : 0.6)
                 .disabled(viewModel.userAnswer.isEmpty)

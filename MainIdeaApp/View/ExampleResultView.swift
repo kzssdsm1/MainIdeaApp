@@ -20,32 +20,69 @@ struct ExampleResultView: View {
     private var resultLabelColor: UIColor {
         return viewModel.question.correctAnswer == viewModel.userAnswer ? UIColor(.chalkBlue) : UIColor(.chalkPink)
     }
+    private var resultImageSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return screenHeight * 0.4
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return screenHeight * 0.4
+            default:
+                return screenHeight * 0.35
+            }
+        }
+    }
     private var textFontWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 42
         } else {
-            return 25
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 25
+            default:
+                return 22
+            }
         }
     }
     private var scoreFontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 50
         } else {
-            return 30
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 30
+            default:
+                return 25
+            }
         }
     }
     private var answerfontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 45
         } else {
-            return 25
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 25
+            default:
+                return 22
+            }
         }
     }
     private var answerSectionfontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 38
         } else {
-            return 22
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 22
+            default:
+                return 20
+            }
         }
     }
     
@@ -110,7 +147,7 @@ struct ExampleResultView: View {
         Image(viewModel.getImageNameForScore())
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: screenHeight * 0.4)
+            .frame(height: resultImageSize)
             .padding(.horizontal)
             .padding(.top, 15)
             .padding(.bottom, 30)

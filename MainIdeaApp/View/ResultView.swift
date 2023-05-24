@@ -18,39 +18,82 @@ struct ResultView: View {
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     private let textColor = UIColor(.offWhite)
     
+    private var resultImageSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return screenHeight * 0.4
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return screenHeight * 0.4
+            default:
+                return screenHeight * 0.35
+            }
+        }
+    }
     private var scoreMessageSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 45
         } else {
-            return 28
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 28
+            default:
+                return 24
+            }
         }
     }
     private var scoreFontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 50
         } else {
-            return 30
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 30
+            default:
+                return 25
+            }
         }
     }
     private var checkAnswersButtonWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 320
         } else {
-            return 200
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 200
+            default:
+                return 180
+            }
         }
     }
     private var leftSignboardWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 280
         } else {
-            return 180
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 180
+            default:
+                return 150
+            }
         }
     }
     private var rightSignboardWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 250
         } else {
-            return 160
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 160
+            default:
+                return 140
+            }
         }
     }
     
@@ -67,7 +110,7 @@ struct ResultView: View {
                         Image(viewModel.getImageNameForScore())
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: screenHeight * 0.4)
+                            .frame(height: resultImageSize)
                             .opacity(isShowingResultComponents ? 1 : 0)
                             .padding()
                             .onAppear {
@@ -78,7 +121,7 @@ struct ResultView: View {
                     } else {
                         Rectangle()
                             .foregroundColor(.clear)
-                            .frame(height: screenHeight * 0.40)
+                            .frame(height: resultImageSize)
                             .padding()
                     }
                     

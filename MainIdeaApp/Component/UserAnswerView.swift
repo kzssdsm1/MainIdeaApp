@@ -21,25 +21,56 @@ struct UserAnswerView: View {
     private var resultLabelColor: Color {
         return viewModel.userAnswers[viewId] == viewModel.questions[viewId].correctAnswer ? .chalkBlue : .chalkPink
     }
+    private var resultImageSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return screenHeight * 0.35
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return screenHeight * 0.35
+            default:
+                return screenHeight * 0.3
+            }
+        }
+    }
     private var answerfontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 45
         } else {
-            return 25
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 25
+            default:
+                return 22
+            }
         }
     }
     private var answerSectionfontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 38
         } else {
-            return 22
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 22
+            default:
+                return 20
+            }
         }
     }
     private var answerCorrectnessfontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
             return 52
         } else {
-            return 27
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 27
+            default:
+                return 23
+            }
         }
     }
     
@@ -63,7 +94,7 @@ struct UserAnswerView: View {
         Image(viewModel.questions[viewId].imageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: screenHeight * 0.35)
+            .frame(height: resultImageSize)
             .padding([.horizontal, .bottom])
             .padding(.top, 15)
     }
