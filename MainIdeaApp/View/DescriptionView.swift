@@ -14,6 +14,33 @@ struct DescriptionView: View {
     
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     
+    private var navButtonWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 320
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 200
+            default:
+                return 180
+            }
+        }
+    }
+    private var textFontWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 42
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 25
+            default:
+                return 22
+            }
+        }
+    }
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 0) {
@@ -61,7 +88,7 @@ struct DescriptionView: View {
                 Button(action: {
                     navigationToExampleResult()
                 }, label: {
-                    navigationButtonLabel("｜答《こた》え｜合《あ》わせをする", width: 200, height: 80)
+                    WoodSignboardView(viewWidth: navButtonWidth, labelText: "｜答《こた》え｜合《あ》わせをする")
                 })
                 .opacity(!viewModel.userAnswer.isEmpty ? 1 : 0.6)
                 .disabled(viewModel.userAnswer.isEmpty)
@@ -90,23 +117,14 @@ struct DescriptionView: View {
         } // ScrollView
     } // body
     
-    private func rubyLabel(_ text: String, fontSize: CGFloat = 25, textColor: UIColor = UIColor(.offWhite), textAlignment: NSTextAlignment = .center, opacity: Double = 0.8) -> some View {
+    private func rubyLabel(_ text: String, textColor: UIColor = UIColor(.offWhite), textAlignment: NSTextAlignment = .center, opacity: Double = 0.8) -> some View {
         RubyLabelRepresentable(
             attributedText: text.createRuby(color: textColor),
-            font: .chalkFont(ofSize: fontSize),
+            font: .chalkFont(ofSize: textFontWidth),
             textColor: textColor,
             textAlignment: textAlignment
         )
         .opacity(opacity)
-    }
-    
-    private func navigationButtonLabel(_ text: String, fontSize: CGFloat = 20, width: CGFloat, height: CGFloat) -> some View {
-        Image("wood_kanban5")
-            .resizable()
-            .frame(width: width, height: height)
-            .overlay(
-                rubyLabel(text, fontSize: fontSize)
-            )
     }
     
     private func navigationToExampleResult() {

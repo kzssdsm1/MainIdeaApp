@@ -18,20 +18,99 @@ struct ResultView: View {
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     private let textColor = UIColor(.offWhite)
     
+    private var resultImageSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return screenHeight * 0.4
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return screenHeight * 0.4
+            default:
+                return screenHeight * 0.35
+            }
+        }
+    }
+    private var scoreMessageSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 45
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 28
+            default:
+                return 24
+            }
+        }
+    }
+    private var scoreFontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 50
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 30
+            default:
+                return 25
+            }
+        }
+    }
+    private var checkAnswersButtonWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 320
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 200
+            default:
+                return 180
+            }
+        }
+    }
+    private var leftSignboardWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 280
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 180
+            default:
+                return 150
+            }
+        }
+    }
+    private var rightSignboardWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 250
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 160
+            default:
+                return 140
+            }
+        }
+    }
+    
     var body: some View {
         ScrollViewReader { scrollProxy in
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
                     Spacer(minLength: 30)
                     
-                    rubyLabel(viewModel.getTextForResult(), fontSize: 28, opacity: isShowingResultComponents ? 0.8 : 0)
+                    rubyLabel(viewModel.getTextForResult(), fontSize: scoreMessageSize, opacity: isShowingResultComponents ? 0.8 : 0)
                         .padding()
                     
                     if viewModel.isShowingResultImage {
                         Image(viewModel.getImageNameForScore())
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: screenHeight * 0.4)
+                            .frame(height: resultImageSize)
                             .opacity(isShowingResultComponents ? 1 : 0)
                             .padding()
                             .onAppear {
@@ -42,16 +121,16 @@ struct ResultView: View {
                     } else {
                         Rectangle()
                             .foregroundColor(.clear)
-                            .frame(height: screenHeight * 0.40)
+                            .frame(height: resultImageSize)
                             .padding()
                     }
                     
-                    rubyLabel("｜君《きみ》の｜得点《とくてん》", fontSize: 27)
+                    rubyLabel("｜君《きみ》の｜得点《とくてん》", fontSize: scoreMessageSize)
                         .padding()
                     
                     Text("\(viewModel.displayedUserScore)点")
                         .foregroundColor(.offWhite)
-                        .font(.custom("Tanuki-Permanent-Marker", size: 30))
+                        .font(.custom("Tanuki-Permanent-Marker", size: scoreFontSize))
                         .opacity(0.8)
                         .padding()
                         .onAppear {
@@ -65,7 +144,7 @@ struct ResultView: View {
                             scrollProxy.scrollTo(0)
                         } // withAnimation
                     }, label: {
-                        scrollButtonLabel("｜答《こた》え｜合《あ》わせをする", width: 200, height: 80)
+                        WoodSignboardView(viewWidth: checkAnswersButtonWidth, labelText: "｜答《こた》え｜合《あ》わせをする")
                     })
                     .opacity(isShowingResultComponents ? 1 : 0.6)
                     .disabled(!isShowingResultComponents)
@@ -92,7 +171,7 @@ struct ResultView: View {
                                             scrollProxy.scrollTo(targetIndex)
                                         } // withAnimation
                                     }, label: {
-                                        scrollButtonLabel(previousButtonText(for: index), width: 180, height: 80)
+                                        WoodSignboardView(viewWidth: leftSignboardWidth, labelText: previousButtonText(for: index))
                                     })
                                     .padding()
                                     
@@ -103,7 +182,7 @@ struct ResultView: View {
                                             scrollProxy.scrollTo(targetIndex)
                                         } // withAnimation
                                     }, label: {
-                                        scrollButtonLabel(nextButtonText(for: index), width: 160, height: 80)
+                                        WoodSignboardView(viewWidth: rightSignboardWidth, labelText: nextButtonText(for: index))
                                     })
                                     .opacity(index != 0 ? 1 : 0)
                                     .padding()

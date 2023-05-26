@@ -21,20 +21,72 @@ struct UserAnswerView: View {
     private var resultLabelColor: Color {
         return viewModel.userAnswers[viewId] == viewModel.questions[viewId].correctAnswer ? .chalkBlue : .chalkPink
     }
+    private var resultImageSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return screenHeight * 0.35
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return screenHeight * 0.35
+            default:
+                return screenHeight * 0.3
+            }
+        }
+    }
+    private var answerfontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 45
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 25
+            default:
+                return 22
+            }
+        }
+    }
+    private var answerSectionfontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 38
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 22
+            default:
+                return 20
+            }
+        }
+    }
+    private var answerCorrectnessfontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 52
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 27
+            default:
+                return 23
+            }
+        }
+    }
     
     var body: some View {
         VStack(spacing: 0) {
             resultImage()
             
-            rubyLabel("｜君《きみ》の｜回答《かいとう》：", fontSize: 22, textColor: answerTextColor, bottomPadding: 10)
+            rubyLabel("｜君《きみ》の｜回答《かいとう》：", fontSize: answerSectionfontSize, textColor: answerTextColor, bottomPadding: 10)
             
-            rubyLabel(viewModel.userAnswers[viewId], fontSize: 25, textColor: answerTextColor, bottomPadding: 30)
+            rubyLabel(viewModel.userAnswers[viewId], fontSize: answerfontSize, textColor: answerTextColor, bottomPadding: 30)
             
-            rubyLabel("｜正解《せいかい》：", fontSize: 22, textColor: UIColor(.chalkBlue), bottomPadding: 10)
+            rubyLabel("｜正解《せいかい》：", fontSize: answerSectionfontSize, textColor: UIColor(.chalkBlue), bottomPadding: 10)
             
-            rubyLabel(viewModel.questions[viewId].correctAnswer, fontSize: 25, textColor: UIColor(.chalkBlue), bottomPadding: 20)
+            rubyLabel(viewModel.questions[viewId].correctAnswer, fontSize: answerfontSize, textColor: UIColor(.chalkBlue), bottomPadding: 20)
             
-            rubyLabel(resultLabelText, fontSize: 27, textColor: UIColor(resultLabelColor), textAlignment: .center, bottomPadding: 5)
+            rubyLabel(resultLabelText, fontSize: answerCorrectnessfontSize, textColor: UIColor(resultLabelColor), textAlignment: .center, bottomPadding: 5)
         } // VStack
     } // body
     
@@ -42,7 +94,7 @@ struct UserAnswerView: View {
         Image(viewModel.questions[viewId].imageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: screenHeight * 0.35)
+            .frame(height: resultImageSize)
             .padding([.horizontal, .bottom])
             .padding(.top, 15)
     }

@@ -19,6 +19,7 @@ struct RubyLabelRepresentable: UIViewRepresentable {
         rubyLabel.numberOfLines = 0
         rubyLabel.setContentHuggingPriority(.required, for: .horizontal)
         rubyLabel.setContentHuggingPriority(.required, for: .vertical)
+        
         return rubyLabel
     }
 

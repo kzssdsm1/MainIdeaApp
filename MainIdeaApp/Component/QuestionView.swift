@@ -11,42 +11,60 @@ struct QuestionView: View {
     @ObservedObject var viewModel: QuestionListViewModel
     
     let viewId: Int
+    let proxy: ScrollViewProxy
     
-    private let screenHeight = CGFloat(UIScreen.main.bounds.height)
+    private let imageHeight = CGFloat(UIScreen.main.bounds.height) * 0.4
+    
+    private var rubyFontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // iPad
+            return 40
+        } else {
+            switch UIScreen.main.bounds.height {
+            case 812...:
+                return 25
+            default:
+                return 20
+            }
+        }
+    }
     
     var body: some View {
         VStack(spacing: 0) {
             Image(viewModel.questions[viewId].imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: screenHeight * 0.35)
+                .frame(height: imageHeight)
                 .padding()
             
             ForEach(viewModel.questions[viewId].choices, id: \.self) { item in
                 Button(action: {
                     viewModel.addAnswer(id: viewId, answerString: item)
+                    
+                    if viewModel.userAnswers.count >= 5 {
+                        withAnimation {
+                            proxy.scrollTo(5)
+                        } // withAnimation
+                    }
                 }, label: {
                     if viewModel.userAnswers.contains(item) {
-                        RubyLabelRepresentable(
-                            attributedText: item.createRuby(color: UIColor(.yellow)),
-                            font: UIFont(name: "Tanuki-Permanent-Marker", size: 25)!,
-                            textColor: UIColor(.yellow),
-                            textAlignment: .left
-                        )
-                        .opacity(0.8)
-                        
+                        rubyLabel(item, textColor: UIColor(.yellow))
                     } else {
-                        RubyLabelRepresentable(
-                            attributedText: item.createRuby(color: UIColor(.white)),
-                            font: UIFont(name: "Tanuki-Permanent-Marker", size: 25)!,
-                            textColor: UIColor(.offWhite),
-                            textAlignment: .left
-                        )
-                        .opacity(0.8)
+                        rubyLabel(item)
                     }
                 })
-                .padding(10)
+                .padding(.top)
             } // ForEach
         } // VStack
     } // body
+    
+    private func rubyLabel(_ text: String, textColor: UIColor = UIColor(.offWhite), textAlignment: NSTextAlignment = .left) -> some View {
+        RubyLabelRepresentable(
+            attributedText: text.createRuby(color: textColor),
+            font: .chalkFont(ofSize: rubyFontSize),
+            textColor: textColor,
+            textAlignment: textAlignment
+        )
+        .opacity(0.8)
+    }
 }
