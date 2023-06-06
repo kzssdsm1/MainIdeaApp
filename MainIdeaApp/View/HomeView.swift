@@ -34,7 +34,7 @@ struct HomeView: View {
             VStack(spacing: 0) {
                 Spacer(minLength: 100)
                 
-                Text("メインアイデアアプリ")
+                Text("メインアイデア")
                     .font(.custom("Tanuki-Permanent-Marker", size: titleFontSize))
                     .foregroundColor(.lightGray)
                     .opacity(0.8)
