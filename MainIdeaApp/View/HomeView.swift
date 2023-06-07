@@ -14,6 +14,13 @@ struct HomeView: View {
     private let screenHeight = CGFloat(UIScreen.main.bounds.height)
     private let homeImageName = QuestionContext.questions.randomElement()!.imageName
     
+    private var creditFontSize: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 40
+        } else {
+            return 20
+        }
+    }
     private var textFontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
             return 50
@@ -32,20 +39,33 @@ struct HomeView: View {
     var body: some View {
         RoutingView {
             VStack(spacing: 0) {
-                Spacer(minLength: 100)
+                Spacer(minLength: 80)
                 
                 Text("メインアイデア")
                     .font(.custom("Tanuki-Permanent-Marker", size: titleFontSize))
                     .foregroundColor(.lightGray)
                     .opacity(0.8)
+                    .padding()
                 
                 Image(homeImageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: screenWidth * 0.5, height: screenHeight * 0.5)
                     .foregroundColor(.lightGray)
+                    .padding(.bottom, 10)
                 
-                Spacer(minLength: 20)
+                HStack {
+                    Spacer(minLength: 0)
+                    
+                    Text("イラスト カトーコーキ")
+                        .font(.custom("Tanuki-Permanent-Marker", size: creditFontSize))
+                        .foregroundColor(.lightGray)
+                        .opacity(0.8)
+                        .padding()
+                        .padding(.bottom, 30)
+                }  // HStack
+                
+                Spacer(minLength: 10)
                 
                 Button(action: {
                     router.navigationTo(.questions)
@@ -70,7 +90,8 @@ struct HomeView: View {
                 
                 Spacer(minLength: 0)
                 
-                Spacer(minLength: 120)
+                Spacer(minLength: 100)
+                
             } // VStack
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
